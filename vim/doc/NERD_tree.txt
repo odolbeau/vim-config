@@ -1,0 +1,1 @@
+/home/bab/vim-config/vendor/nerdtree/doc/NERD_tree.txt
