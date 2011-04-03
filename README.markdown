@@ -1,6 +1,6 @@
 # vim config
 
-Principally inspired by [Marc's vim config](http://daringfireball.net/projects/markdown/)
+Principally inspired by [Marc's vim config](https://github.com/marcw/vim-config)
 
 ## Installation procedure
 
