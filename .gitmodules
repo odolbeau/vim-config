@@ -1,0 +1,3 @@
+[submodule "vendors/nerdtree"]
+	path = vendors/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
