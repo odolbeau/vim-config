@@ -25,11 +25,12 @@ install_git()
     fi
 
     SRC="$VENDOR/$INSTALL_DIR"
+    DEST="$DIR/vim"
 
-    ls -l $SRC/doc/ | awk -v src=$SRC -v dir=$DIR/vim '$9 ~ /.+/ {print src"/doc/"$9" "dir"/doc/"$9;}' | xargs ln -s
-    ls -l $SRC/plugin/ | awk -v src=$SRC -v dir=$DIR/vim '$9 ~ /.+/ {print src"/plugin/"$9" "dir"/plugin/"$9;}' | xargs ln -s
+    ls -l $SRC/doc/ | awk -v src=$SRC -v dir=$DEST '$9 ~ /.+/ {print src"/doc/"$9" "dir"/doc/"$9;}' | xargs ln -s
+    ls -l $SRC/plugin/ | awk -v src=$SRC -v dir=$DEST '$9 ~ /.+/ {print src"/plugin/"$9" "dir"/plugin/"$9;}' | xargs ln -s
 }
 
 # NERDTree
 install_git nerdtree git://github.com/scrooloose/nerdtree.git
-ln -s nerdtree/nerdtree_plugin vim
+ln -s $VENDOR/nerdtree/nerdtree_plugin $DIR/vim/nerdtree_plugin
