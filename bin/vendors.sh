@@ -10,6 +10,16 @@ fi
 mkdir -p "$VENDOR" && cd "$VENDOR"
 
 
+link()
+{
+    SRC=$1
+    DEST=$2
+
+    if [ ! -e $DEST ]; then
+        ln -s $1 $2
+    fi
+}
+
 ##
 # @param destination directory (e.g. "doctrine")
 # @param URL of the git remote (e.g. git://github.com/doctrine/doctrine2.git)
@@ -22,15 +32,24 @@ install_git()
 
     if [ ! -d $INSTALL_DIR ]; then
         git clone $SOURCE_URL $INSTALL_DIR
+
+        SRC="$VENDOR/$INSTALL_DIR"
+        DEST="$DIR/vim"
+
+        ls -l $SRC/doc/ | awk -v src=$SRC -v dir=$DEST '$9 ~ /.+/ {print src"/doc/"$9" "dir"/doc/"$9;}' | xargs link
+        ls -l $SRC/plugin/ | awk -v src=$SRC -v dir=$DEST '$9 ~ /.+/ {print src"/plugin/"$9" "dir"/plugin/"$9;}' | xargs link
     fi
 
-    SRC="$VENDOR/$INSTALL_DIR"
-    DEST="$DIR/vim"
-
-    ls -l $SRC/doc/ | awk -v src=$SRC -v dir=$DEST '$9 ~ /.+/ {print src"/doc/"$9" "dir"/doc/"$9;}' | xargs ln -s
-    ls -l $SRC/plugin/ | awk -v src=$SRC -v dir=$DEST '$9 ~ /.+/ {print src"/plugin/"$9" "dir"/plugin/"$9;}' | xargs ln -s
 }
 
 # NERDTree
 install_git nerdtree git://github.com/scrooloose/nerdtree.git
-ln -s $VENDOR/nerdtree/nerdtree_plugin $DIR/vim/nerdtree_plugin
+link $VENDOR/nerdtree/nerdtree_plugin $DIR/vim/nerdtree_plugin
+
+# SnipMate
+install_git snipmate https://github.com/msanders/snipmate.vim.git
+link $VENDOR/snipmate/after $DIR/vim/after
+link $VENDOR/snipmate/autoload $DIR/vim/autoload
+link $VENDOR/snipmate/ftplugin $DIR/vim/ftplugin
+link $VENDOR/snipmate/snippets $DIR/vim/snippets
+link $VENDOR/snipmate/syntax $DIR/vim/syntax
