@@ -9,17 +9,6 @@ fi
 
 mkdir -p "$VENDOR" && cd "$VENDOR"
 
-
-link()
-{
-    SRC=$1
-    DEST=$2
-
-    if [ ! -e $DEST ]; then
-        ln -s $1 $2
-    fi
-}
-
 ##
 # @param destination directory (e.g. "doctrine")
 # @param URL of the git remote (e.g. git://github.com/doctrine/doctrine2.git)
@@ -36,20 +25,27 @@ install_git()
         SRC="$VENDOR/$INSTALL_DIR"
         DEST="$DIR/vim"
 
-        ls -l $SRC/doc/ | awk -v src=$SRC -v dir=$DEST '$9 ~ /.+/ {print src"/doc/"$9" "dir"/doc/"$9;}' | xargs link
-        ls -l $SRC/plugin/ | awk -v src=$SRC -v dir=$DEST '$9 ~ /.+/ {print src"/plugin/"$9" "dir"/plugin/"$9;}' | xargs link
+        if [ -d $SRC/doc/ ]; then
+            ls -l $SRC/doc/ | awk -v src=$SRC -v dir=$DEST '$9 ~ /.+/ {print src"/doc/"$9" "dir"/doc/"$9;}' | xargs ln -sf
+        fi
+        if [ -d $SRC/plugin/ ]; then
+            ls -l $SRC/plugin/ | awk -v src=$SRC -v dir=$DEST '$9 ~ /.+/ {print src"/plugin/"$9" "dir"/plugin/"$9;}' | xargs ln -sf
+        fi
     fi
 
 }
 
 # NERDTree
 install_git nerdtree git://github.com/scrooloose/nerdtree.git
-link $VENDOR/nerdtree/nerdtree_plugin $DIR/vim/nerdtree_plugin
+ln -sf $VENDOR/nerdtree/nerdtree_plugin $DIR/vim/nerdtree_plugin
 
 # SnipMate
-install_git snipmate https://github.com/msanders/snipmate.vim.git
-link $VENDOR/snipmate/after $DIR/vim/after
-link $VENDOR/snipmate/autoload $DIR/vim/autoload
-link $VENDOR/snipmate/ftplugin $DIR/vim/ftplugin
-link $VENDOR/snipmate/snippets $DIR/vim/snippets
-link $VENDOR/snipmate/syntax $DIR/vim/syntax
+install_git snipmate git://github.com/msanders/snipmate.vim.git
+ln -sf $VENDOR/snipmate/after $DIR/vim/after
+ln -sf $VENDOR/snipmate/autoload $DIR/vim/autoload
+ln -sf $VENDOR/snipmate/ftplugin $DIR/vim/ftplugin
+ln -sf $VENDOR/snipmate/snippets $DIR/vim/snippets
+ln -sf $VENDOR/snipmate/syntax $DIR/vim/syntax
+
+# Minibufexpl
+install_git minibufexpl git://github.com/fholgado/minibufexpl.vim.git
