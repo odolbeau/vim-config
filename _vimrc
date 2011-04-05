@@ -15,27 +15,53 @@
     set showcmd                             " Show the command being typed
 " }
 
-" Ediotr {
+" Editor {
     set bs=indent,eol,start                 " Backspace works everywhere
-    set ruler                               " Affichage des coordonees du curseur
-    set history=50                          " Taille de l'historique des commandes
+    set ruler                               " Show current cursor position
+    set history=50                          " command history size
+    set noerrorbells                        " Stop the noise!!
+    set listchars=trail:¤,tab:>-            " Show blank spaces and tabs at the end of a line
 " }
 
 " Indentation {
-    set autoindent                          " Indentation automatique
-    set tabstop=4                           " Nombre de caracteres pour tabulation
+    set autoindent                          " Automatic indentation
+    set softtabstop=4                       " tab = 4 space
     set shiftwidth=4
-    set expandtab
+    set expandtab                           " no more tabs, only spaces!
+    set shiftround                          " when at 3 spaces, and I hit > ... go to 4, not 7
 " }
 
-" Coloration syntaxique {
+" Coloration {
     if has("syntax")
         syntax on
     endif
-    let php_sql_query = 1                   " Coloration des requetes SQL
-    let php_htmlInStrings = 1               " Coloration des balises HTML
+    let php_sql_query = 1                   " SQL queries
+    let php_htmlInStrings = 1               " HTML
+" }
+
+" Keymap {
+    " Changing leader
+    let mapleader   = ","
+    let g:mapleader = ","
+    " Minibufexpl with bclose ,q is better than :Bclose :)
+    noremap <leader>q :Bclose<CR>
+    noremap <leader>q! :Bclose!<CR>
 " }
 
 " NERDTree {
     let g:NERDTreeWinPos = "right"
+" }
+
+" MiniBufXplorer settings {
+    let g:miniBufExplMaxSize=2              " set max size to 2 lines
+    let g:miniBufExplMapWindowNavVim= 1     " Navigate trough buffers with Control + [hjkl]
+    let g:miniBufExplMapWindowNavArrows=1   " Navigate trough buffers with Control + Arrow Keys
+    let g:miniBufExplMapCTabSwitchBufs=1    " Navigate trough buffers with <C-TAB> and <C-S-TAB>
+    let g:miniBufExplModSelTarget=1         " Hide others explorers out of MBE
+    let g:miniBufExplSplitBelow=0           " Put new window above current or on the left for vertical split
+" }
+
+" Initialization {
+"    autocmd VimEnter * NERDTree             " Automatically open NERDTree when start...
+"    autocmd VimEnter * wincmd p             " ...but come back in the main window
 " }

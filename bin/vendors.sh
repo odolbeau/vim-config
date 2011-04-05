@@ -49,3 +49,9 @@ ln -sf $VENDOR/snipmate/syntax $DIR/vim/syntax
 
 # Minibufexpl
 install_git minibufexpl git://github.com/fholgado/minibufexpl.vim.git
+
+# Bclose
+ln -sf $VENDOR/bclose/bclose.vim $DIR/vim/plugin
+
+# NERDCommenter
+install_git nerdcommenter git://github.com/scrooloose/nerdcommenter.git
