@@ -1,11 +1,14 @@
 # Install NERDTree
 DIR=`php -r "echo dirname(dirname(realpath('$0')));"`
 VENDOR="$DIR/vendor"
+RESOURCES="$DIR/resources"
 
 # initialization
 if [ "$1" = "--reinstall" ]; then
     rm -rf $VENDOR
 fi
+
+mkdir -p $DIR/vim/colors
 
 mkdir -p "$VENDOR" && cd "$VENDOR"
 
@@ -25,12 +28,15 @@ install_git()
         SRC="$VENDOR/$INSTALL_DIR"
         DEST="$DIR/vim"
 
-        if [ -d $SRC/doc/ ]; then
-            ls -l $SRC/doc/ | awk -v src=$SRC -v dir=$DEST '$9 ~ /.+/ {print src"/doc/"$9" "dir"/doc/"$9;}' | xargs ln -sf
-        fi
-        if [ -d $SRC/plugin/ ]; then
-            ls -l $SRC/plugin/ | awk -v src=$SRC -v dir=$DEST '$9 ~ /.+/ {print src"/plugin/"$9" "dir"/plugin/"$9;}' | xargs ln -sf
-        fi
+        FOLDERS=( doc plugin syntax ftdetect snippets )
+
+        for FOLDER in ${FOLDERS[@]}
+        do
+            mkdir -p $DIR/vim/$FOLDER
+            if [ -d $SRC/$FOLDER ]; then
+                ls -l $SRC/$FOLDER/ | awk -v src="$SRC/$FOLDER" -v dest="$DEST/$FOLDER" '$9 ~ /.+/ {print src"/"$9" "dest"/"$9;}' | xargs -L 1 ln -sf
+            fi
+        done
     fi
 
 }
@@ -44,14 +50,21 @@ install_git snipmate git://github.com/msanders/snipmate.vim.git
 ln -sf $VENDOR/snipmate/after $DIR/vim/after
 ln -sf $VENDOR/snipmate/autoload $DIR/vim/autoload
 ln -sf $VENDOR/snipmate/ftplugin $DIR/vim/ftplugin
-ln -sf $VENDOR/snipmate/snippets $DIR/vim/snippets
-ln -sf $VENDOR/snipmate/syntax $DIR/vim/syntax
 
 # Minibufexpl
 install_git minibufexpl git://github.com/fholgado/minibufexpl.vim.git
 
 # Bclose
-ln -sf $VENDOR/bclose/bclose.vim $DIR/vim/plugin
+ln -sf $RESOURCES/plugin/bclose.vim $DIR/vim/plugin
 
 # NERDCommenter
 install_git nerdcommenter git://github.com/scrooloose/nerdcommenter.git
+
+# vim-markdown
+install_git vim-markdown git://github.com/plasticboy/vim-markdown.git
+
+# Syntax
+ls -l $RESOURCES/syntax/ | awk -v src="$RESOURCES/syntax" -v dir="$DIR/vim/syntax" '$9 ~ /.+/ {print src"/"$9" "dir"/"$9;}' | xargs -L 1 ln -sf
+
+# Colors
+ls -l $RESOURCES/colors/ | awk -v src="$RESOURCES/colors" -v dir="$DIR/vim/colors" '$9 ~ /.+/ {print src"/"$9" "dir"/"$9;}' | xargs -L 1 ln -sf
