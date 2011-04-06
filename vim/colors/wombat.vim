@@ -1,1 +1,0 @@
-/home/bab/vim-config/resources/colors/wombat.vim

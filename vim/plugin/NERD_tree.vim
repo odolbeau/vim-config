@@ -1,1 +1,0 @@
-/home/bab/vim-config/vendor/nerdtree/plugin/NERD_tree.vim
