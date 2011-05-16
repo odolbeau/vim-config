@@ -1,4 +1,6 @@
-# Install NERDTree
+NORMAL="\\033[0;39m"
+ROUGE="\\033[1;31m"
+
 DIR=`php -r "echo dirname(dirname(realpath('$0')));"`
 VENDOR="$DIR/vendor"
 RESOURCES="$DIR/resources"
@@ -34,37 +36,50 @@ install_git()
         do
             mkdir -p $DIR/vim/$FOLDER
             if [ -d $SRC/$FOLDER ]; then
-                ls -l $SRC/$FOLDER/ | awk -v src="$SRC/$FOLDER" -v dest="$DEST/$FOLDER" '$9 ~ /.+/ {print src"/"$9" "dest"/"$9;}' | xargs -L 1 ln -sf
+                ls -l $SRC/$FOLDER/ | awk -v src="$SRC/$FOLDER" -v dest="$DEST/$FOLDER" '$8 ~ /.+/ {print src"/"$8" "dest"/"$8;}' | xargs -L 1 ln -sf
             fi
         done
     fi
 
 }
 
+echo_action()
+{
+    echo -e "$ROUGE$1$NORMAL"
+}
+
 # NERDTree
+echo_action "Installing NERDTree..."
 install_git nerdtree git://github.com/scrooloose/nerdtree.git
 ln -sf $VENDOR/nerdtree/nerdtree_plugin $DIR/vim/nerdtree_plugin
 
 # SnipMate
+echo_action "Installing Snipmate..."
 install_git snipmate git://github.com/msanders/snipmate.vim.git
 ln -sf $VENDOR/snipmate/after $DIR/vim/after
 ln -sf $VENDOR/snipmate/autoload $DIR/vim/autoload
 ln -sf $VENDOR/snipmate/ftplugin $DIR/vim/ftplugin
 
 # Minibufexpl
+echo_action "Installing Minibufexpl..."
 install_git minibufexpl git://github.com/fholgado/minibufexpl.vim.git
 
 # Bclose
+echo_action "Installing Bclose..."
 ln -sf $RESOURCES/plugin/bclose.vim $DIR/vim/plugin
 
 # NERDCommenter
+echo_action "Installing NerdCommenter..."
 install_git nerdcommenter git://github.com/scrooloose/nerdcommenter.git
 
 # vim-markdown
+echo_action "Installing vim-markdown..."
 install_git vim-markdown git://github.com/plasticboy/vim-markdown.git
 
 # Syntax
-ls -l $RESOURCES/syntax/ | awk -v src="$RESOURCES/syntax" -v dir="$DIR/vim/syntax" '$9 ~ /.+/ {print src"/"$9" "dir"/"$9;}' | xargs -L 1 ln -sf
+echo_action "Copiyng Syntax folder..."
+ls -l $RESOURCES/syntax/ | awk -v src="$RESOURCES/syntax" -v dir="$DIR/vim/syntax" '$8 ~ /.+/ {print src"/"$8" "dir"/"$8;}' | xargs -L 1 ln -sf
 
 # Colors
-ls -l $RESOURCES/colors/ | awk -v src="$RESOURCES/colors" -v dir="$DIR/vim/colors" '$9 ~ /.+/ {print src"/"$9" "dir"/"$9;}' | xargs -L 1 ln -sf
+echo_action "Copiyng Colors folder..."
+ls -l $RESOURCES/colors/ | awk -v src="$RESOURCES/colors" -v dir="$DIR/vim/colors" '$8 ~ /.+/ {print src"/"$8" "dir"/"$8;}' | xargs -L 1 ln -sf
