@@ -36,7 +36,7 @@ install_git()
         do
             mkdir -p $DIR/vim/$FOLDER
             if [ -d $SRC/$FOLDER ]; then
-                ls -l $SRC/$FOLDER/ | awk -v src="$SRC/$FOLDER" -v dest="$DEST/$FOLDER" '$8 ~ /.+/ {print src"/"$8" "dest"/"$8;}' | xargs -L 1 ln -sf
+                ls -1 $SRC/$FOLDER/ | awk -v src="$SRC/$FOLDER" -v dest="$DEST/$FOLDER" '$1 ~ /.+/ {print src"/"$1" "dest"/"$1;}' | xargs -L 1 ln -sf
             fi
         done
     fi
@@ -78,8 +78,8 @@ install_git vim-markdown git://github.com/plasticboy/vim-markdown.git
 
 # Syntax
 echo_action "Copiyng Syntax folder..."
-ls -l $RESOURCES/syntax/ | awk -v src="$RESOURCES/syntax" -v dir="$DIR/vim/syntax" '$8 ~ /.+/ {print src"/"$8" "dir"/"$8;}' | xargs -L 1 ln -sf
+ls -1 $RESOURCES/syntax/ | awk -v src="$RESOURCES/syntax" -v dir="$DIR/vim/syntax" '$1 ~ /.+/ {print src"/"$1" "dir"/"$1;}' | xargs -L 1 ln -sf
 
 # Colors
 echo_action "Copiyng Colors folder..."
-ls -l $RESOURCES/colors/ | awk -v src="$RESOURCES/colors" -v dir="$DIR/vim/colors" '$8 ~ /.+/ {print src"/"$8" "dir"/"$8;}' | xargs -L 1 ln -sf
+ls -1 $RESOURCES/colors/ | awk -v src="$RESOURCES/colors" -v dir="$DIR/vim/colors" '$1 ~ /.+/ {print src"/"$1" "dir"/"$1;}' | xargs -L 1 ln -sf
