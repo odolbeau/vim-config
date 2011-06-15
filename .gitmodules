@@ -1,18 +1,15 @@
-[submodule "vendors/nerdtree"]
-	path = vendors/nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule "vendor/nerdtree"]
-	path = vendor/nerdtree
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "vendor/snipmate"]
-	path = vendor/snipmate
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
 	url = git://github.com/msanders/snipmate.vim.git
-[submodule "vendor/minibufexpl"]
-	path = vendor/minibufexpl
+[submodule "bundle/minibufexpl"]
+	path = bundle/minibufexpl
 	url = git://github.com/fholgado/minibufexpl.vim.git
-[submodule "vendor/nerdcommenter"]
-	path = vendor/nerdcommenter
+[submodule "bundle/nerdcommenter"]
+	path = bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
-[submodule "vendor/vim-markdown"]
-	path = vendor/vim-markdown
+[submodule "bundle/vim-markdown"]
+	path = bundle/vim-markdown
 	url = git://github.com/plasticboy/vim-markdown.git
