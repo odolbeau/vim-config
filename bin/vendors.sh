@@ -1,31 +1,22 @@
+#!/bin/bash
 NORMAL="\\033[0;39m"
-ROUGE="\\033[1;31m"
+RED="\\033[1;31m"
 
-DIR=`php -r "echo dirname(dirname(realpath('$0')));"`
+DIR=`dirname $(readlink -f /proc/$$/fd/255)`/../
 VENDOR="$DIR/vendor"
 RESOURCES="$DIR/resources"
 
-# initialization
-if [ "$1" = "--reinstall" ]; then
-    rm -rf $VENDOR
-fi
-
 mkdir -p $DIR/vim/colors
-
-mkdir -p "$VENDOR" && cd "$VENDOR"
 
 ##
 # @param destination directory (e.g. "doctrine")
 # @param URL of the git remote (e.g. git://github.com/doctrine/doctrine2.git)
 # @param revision to point the head (e.g. origin/HEAD)
 #
-install_git()
+install_vendor()
 {
     INSTALL_DIR=$1
-    SOURCE_URL=$2
 
-    if [ ! -d $INSTALL_DIR ]; then
-        git clone $SOURCE_URL $INSTALL_DIR
 
         SRC="$VENDOR/$INSTALL_DIR"
         DEST="$DIR/vim"
@@ -39,30 +30,28 @@ install_git()
                 ls -1 $SRC/$FOLDER/ | awk -v src="$SRC/$FOLDER" -v dest="$DEST/$FOLDER" '$1 ~ /.+/ {print src"/"$1" "dest"/"$1;}' | xargs -L 1 ln -sf
             fi
         done
-    fi
-
 }
 
 echo_action()
 {
-    echo -e "$ROUGE$1$NORMAL"
+    echo -e "$RED$1$NORMAL"
 }
 
 # NERDTree
-echo_action "Installing NERDTree..."
-install_git nerdtree git://github.com/scrooloose/nerdtree.git
+echo_action "Installing Nerdtree..."
+install_vendor nerdtree
 ln -sf $VENDOR/nerdtree/nerdtree_plugin $DIR/vim/nerdtree_plugin
 
 # SnipMate
 echo_action "Installing Snipmate..."
-install_git snipmate git://github.com/msanders/snipmate.vim.git
+install_vendor snipmate
 ln -sf $VENDOR/snipmate/after $DIR/vim/after
 ln -sf $VENDOR/snipmate/autoload $DIR/vim/autoload
 ln -sf $VENDOR/snipmate/ftplugin $DIR/vim/ftplugin
 
 # Minibufexpl
 echo_action "Installing Minibufexpl..."
-install_git minibufexpl git://github.com/fholgado/minibufexpl.vim.git
+install_vendor minibufexpl
 
 # Bclose
 echo_action "Installing Bclose..."
@@ -70,11 +59,11 @@ ln -sf $RESOURCES/plugin/bclose.vim $DIR/vim/plugin
 
 # NERDCommenter
 echo_action "Installing NerdCommenter..."
-install_git nerdcommenter git://github.com/scrooloose/nerdcommenter.git
+install_vendor nerdcommenter
 
 # vim-markdown
 echo_action "Installing vim-markdown..."
-install_git vim-markdown git://github.com/plasticboy/vim-markdown.git
+install_vendor vim-markdown
 
 # Syntax
 echo_action "Copiyng Syntax folder..."
