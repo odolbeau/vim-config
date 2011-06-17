@@ -1,16 +1,29 @@
-" Pathogen install
-call pathogen#runtime_append_all_bundles() 
-
 " Basics
     set nocompatible                        " Use defauts Vim
+    syntax enable
+
+" Pathogen install
+    call pathogen#runtime_append_all_bundles()
 
 " Encoding
     set ff=unix                             " Unix EOL
     set fileencoding=UTF-8                  " Speak UTF-8
     set encoding=UTF-8                      " Display UTF-8
 
+" Color
+    set background=dark                     " dark background is better!
+"    colorscheme desertEx                    " change ColorScheme
+    let php_sql_query = 1                   " SQL queries
+    let php_htmlInStrings = 1               " HTML
+    if has('gui_running')
+        let g:solarized_style="light"
+        let g:solarized_contrast="high"
+        colorscheme solarized
+    else
+        colorscheme desertEx
+    endif
+
 " UI
-    colorscheme "wombat"                    " change ColorScheme
     set cursorline                          " Highlight the current line
     set scrolloff=8                         " Keep x line for scope while scrolling
     set sidescrolloff=8                     " same same
@@ -34,15 +47,6 @@ call pathogen#runtime_append_all_bundles()
     set shiftwidth=4
     set expandtab                           " no more tabs, only spaces!
     set shiftround                          " when at 3 spaces, and I hit > ... go to 4, not 7
-
-
-" Coloration
-    if has("syntax")
-        syntax on
-    endif
-    let php_sql_query = 1                   " SQL queries
-    let php_htmlInStrings = 1               " HTML
-
 
 " Keymap
     " Changing leader

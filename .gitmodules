@@ -1,15 +1,18 @@
-[submodule "bundle/nerdtree"]
-	path = bundle/nerdtree
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "bundle/snipmate"]
-	path = bundle/snipmate
+[submodule "vim/bundle/snipmate"]
+	path = vim/bundle/snipmate
 	url = git://github.com/msanders/snipmate.vim.git
-[submodule "bundle/minibufexpl"]
-	path = bundle/minibufexpl
+[submodule "vim/bundle/minibufexpl"]
+	path = vim/bundle/minibufexpl
 	url = git://github.com/fholgado/minibufexpl.vim.git
-[submodule "bundle/nerdcommenter"]
-	path = bundle/nerdcommenter
+[submodule "vim/bundle/nerdcommenter"]
+	path = vim/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
-[submodule "bundle/vim-markdown"]
-	path = bundle/vim-markdown
+[submodule "vim/bundle/vim-markdown"]
+	path = vim/bundle/vim-markdown
 	url = git://github.com/plasticboy/vim-markdown.git
+[submodule "vim/bundle/vim-colors-solarized"]
+	path = vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
