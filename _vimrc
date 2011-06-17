@@ -20,7 +20,7 @@
         let g:solarized_contrast="high"
         colorscheme solarized
     else
-        colorscheme desertEx
+        colorscheme solarized
     endif
 
 " UI
