@@ -69,6 +69,14 @@
     let g:miniBufExplModSelTarget=1         " Hide others explorers out of MBE
     let g:miniBufExplSplitBelow=0           " Put new window above current or on the left for vertical split
 
+" TagList settings {
+    let Tlist_Auto_Open=0
+    let Tlist_Use_Right_Window=0
+    let Tlist_Sort_Type = "name" " order by
+    let tlist_php_settings = 'php;c:class;d:constant;f:function' " don't show variables in php
+
+    nnoremap <f2> :NERDTreeToggle<CR>
+    nnoremap <f3> :TlistToggle<CR>
 
 " Initialization
 "    autocmd VimEnter * NERDTree             " Automatically open NERDTree when start...
