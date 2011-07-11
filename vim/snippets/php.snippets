@@ -1,0 +1,68 @@
+snippet cont
+<?php
+
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+class ${1:module}Controller extends Controller
+{
+    public function ${2:action}Action()
+    {
+	${3:// your action}
+    }
+}
+
+snippet type
+<?php
+
+use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\FormBuilder;
+
+/**
+ * ${1:type}Type
+ *
+ * @author Marc Weistroff <marc.weistroff@${2:sensio.com}>
+ */
+class ${1:type}Type extends AbstractType
+{
+    public function buildForm(FormBuilder $builder, array $options)
+    {
+    }
+}
+
+snippet nrequest
+use Symfony\Component\HttpFoundation\Request;
+
+snippet nresponse
+use Symfony\Component\HttpFoundation\Response;
+
+snippet cgreq
+$this->get('request')
+
+snippet cgent
+$this->get('doctrine')->getEntityManager()
+snippet cgtok
+$this->get('security.context')->getToken()
+snippet cgfor
+$form = $this->get('form.factory')->create({new ${1:MyType}(), ${2:entity});
+    snippet set
+	public function set${1:CamelCase}($${2:property})
+	{
+	    $this->$2 = $$2;
+	}
+    snippet get
+	public function get${1:Property}()
+	{
+	    return $this->${2:property};
+	}
+    snippet add
+	public function add${1:Item}(${2:Class} $${3:property})
+	{
+	    $this->${4:collection}->add($$3);
+	}
+    snippet dcol
+	$this->${1:collection} = new Doctrine\Common\Collections\ArrayCollection();
+    snippet pubfun
+	public function ${1:name}(${2})
+	{
+	    ${3}
+	}
