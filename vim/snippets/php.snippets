@@ -20,7 +20,7 @@ snippet type
 	/**
 	 * ${1:type}Type.
 	 *
-	 * @author Marc Weistroff <marc.weistroff@${2:sensio.com}>
+	 * @author ${2:Olivier Dolbeau <contact@odolbeau>}
 	 */
 	class $1Type extends AbstractType
 	{
@@ -40,7 +40,7 @@ snippet bundle
 	/**
 	 * ${2:Bundle}Bundle.
 	 *
-	 * @author Marc Weistroff <marc.weistroff@${3:sensio.com}>
+	 * @author ${3:Olivier Dolbeau <contact@odolbeau>}
 	 */
 	class $2Bundle extends Bundle
 	{
@@ -58,7 +58,7 @@ snippet command
 	/**
 	 * ${2:Command}.
 	 *
-	 * @author Marc Weistroff <marc.weistroff@${3:sensio.com}>
+	 * @author ${3:Olivier Dolbeau <contact@odolbeau>}
 	 */
 	class $2 extends Command
 	{
@@ -112,3 +112,14 @@ snippet action
 		${3}
 		return $this->render();
 	}
+snippet pre
+	echo '<pre>';
+	print_r($${1});
+	echo '</pre>';
+	${2}
+snippet vdd
+	var_dump($${1});die;
+	${2}
+snippet vd
+	var_dump($${1});
+	${2}
