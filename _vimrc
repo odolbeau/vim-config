@@ -70,7 +70,7 @@
     let g:miniBufExplModSelTarget=1         " Hide others explorers out of MBE
     let g:miniBufExplSplitBelow=0           " Put new window above current or on the left for vertical split
 
-" TagList settings {
+" TagList settings
     let Tlist_Auto_Open=0
     let Tlist_Use_Right_Window=0
     let Tlist_Sort_Type = "name" " order by
@@ -78,6 +78,12 @@
 
     nnoremap <f2> :NERDTreeToggle<CR>
     nnoremap <f3> :TlistToggle<CR>
+
+" PDV
+    let g:pdv_cfg_Author = "Olivier Dolbeau <contact@odolbeau.fr>"
+    let g:pdv_cfg_Version = ""
+    nnoremap <leader>d :call PhpDocSingle()<CR>
+    vnoremap <leader>d :call PhpDocRange()<CR>
 
 " Initialization
 "    autocmd VimEnter * NERDTree             " Automatically open NERDTree when start...
