@@ -53,9 +53,6 @@
     " Changing leader
     let mapleader   = ","
     let g:mapleader = ","
-    " Minibufexpl with bclose ,q is better than :Bclose :)
-    noremap <leader>q :Bclose<CR>
-    noremap <leader>q! :Bclose!<CR>
 
 
 " NERDTree
@@ -69,6 +66,9 @@
     let g:miniBufExplMapCTabSwitchBufs=1    " Navigate trough buffers with <C-TAB> and <C-S-TAB>
     let g:miniBufExplModSelTarget=1         " Hide others explorers out of MBE
     let g:miniBufExplSplitBelow=0           " Put new window above current or on the left for vertical split
+    " Minibufexpl with ,q is better than :Bclose :)
+    noremap <leader>q :Bclose<CR>
+    noremap <leader>q! :Bclose!<CR>
 
 " TagList settings
     let Tlist_Auto_Open=0
@@ -85,6 +85,5 @@
     nnoremap <leader>d :call PhpDocSingle()<CR>
     vnoremap <leader>d :call PhpDocRange()<CR>
 
-" Initialization
-"    autocmd VimEnter * NERDTree             " Automatically open NERDTree when start...
-"    autocmd VimEnter * wincmd p             " ...but come back in the main window
+" twig
+    autocmd BufRead *.twig set filetype=htmltwig
