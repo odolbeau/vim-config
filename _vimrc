@@ -40,6 +40,7 @@
     set history=50                          " command history size
     set noerrorbells                        " Stop the noise!!
     set listchars=trail:¤,tab:>-            " Show blank spaces and tabs at the end of a line
+    set list
 
 
 " Indentation
