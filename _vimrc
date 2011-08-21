@@ -13,7 +13,6 @@
 
 " Color
     set background=dark                     " dark background is better!
-"    colorscheme desertEx                    " change ColorScheme
     let php_sql_query = 1                   " SQL queries
     let php_htmlInStrings = 1               " HTML
     if has('gui_running')
@@ -21,7 +20,7 @@
         let g:solarized_contrast="high"
         colorscheme solarized
     else
-        colorscheme solarized
+        colorscheme desertEx
     endif
 
 " UI
