@@ -87,3 +87,6 @@
 
 " twig
     autocmd BufRead *.twig set filetype=htmltwig
+
+" use :W to force save when forgot to open file in root
+    command W w !sudo tee % > /dev/null
