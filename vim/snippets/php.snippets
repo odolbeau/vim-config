@@ -94,6 +94,15 @@ snippet get
 	{
 		return $this->${2:property};
 	}
+snippet getset
+	public function get${1:Property}()
+	{
+		return $this->${2:property};
+	}
+	public function set$1($$2)
+	{
+		$this->$2 = $$2;
+	}
 snippet add
 	public function add${1:Item}(${2:Class} $${3:property})
 	{
