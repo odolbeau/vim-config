@@ -18,3 +18,5 @@ You have to build the command-t extension with the following command:
 
     $ cd ~/vim-config/vim/bunfle/command-t/
     $ rake make
+
+It use ruby, so you have to install ruby-dev package (debian) or XCode (mac)
