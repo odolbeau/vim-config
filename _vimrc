@@ -55,6 +55,14 @@
     let mapleader   = ","
     let g:mapleader = ","
 
+    " Delete trailing spaces
+    nmap <silent> <C-F10> :%s/\s\+$//g<CR>
+    nmap <silent> <C-S-F10> :%s/^\s\+$//g<CR>
+
+    " Insert php namespace
+    nmap <silent> <C-F9> <ESC>"%PdF/r;:s#/#\\#g<CR>Inamespace  <ESC>d/[A-Z]
+    " Insert php namespace and create class name
+    nmap <silent> <C-S-F9> ggO<?php<CR><CR><ESC>"%PdF/r;:s#/#\\#g<CR>Inamespace  <ESC>d/[A-Z]<CR>Goclass <C-R>=expand("%:t:r")<CR><CR>{<CR>
 
 " NERDTree
     let g:NERDTreeWinPos = "right"
