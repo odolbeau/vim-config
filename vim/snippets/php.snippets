@@ -103,6 +103,24 @@ snippet getset
 	{
 		$this->$2 = $$2;
 	}
+snippet getsetlfl
+	public function get${1:Property}($locale = null)
+	{
+		return $this->getLocaleFieldValue('${2:property}', (null === $locale)? $this->locale : $locale);
+	}
+	public function set$1($$2, $locale = null)
+	{
+		$this->setLocaleFieldValue('$2', (null === $locale)? $this->locale : $locale, $$2);
+	}
+
+	public function get$1s()
+	{
+		return $this->getLocaleFieldCollection('$2');
+	}
+	public function set$1s($$2s)
+	{
+		$this->setLocaleFieldCollection('$2', $$2s);
+	}
 snippet add
 	public function add${1:Item}(${2:Class} $${3:property})
 	{
