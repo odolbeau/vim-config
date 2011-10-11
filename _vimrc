@@ -32,6 +32,7 @@
     set number                              " Show line numbers in gutter
     set ruler                               " Always show current position along the bottom
     set showcmd                             " Show the command being typed
+    set wildmode=list:longest               " Complete files like a shell.
 
 
 " Editor
@@ -39,9 +40,14 @@
     set ruler                               " Show current cursor position
     set history=50                          " command history size
     set noerrorbells                        " Stop the noise!!
-    set listchars=trail:¤,tab:>-            " Show blank spaces and tabs at the end of a line
     set list
+    set listchars=trail:¤,tab:>-            " Show blank spaces and tabs at the end of a line
 
+" Search
+    set incsearch                           " Highlight matches as you type.
+    set hlsearch                            " Highlight matches.
+    set ignorecase                          " Case-insensitive searching.
+    set smartcase                           " But case-sensitive if expression contains a capital letter.
 
 " Indentation
     set autoindent                          " Automatic indentation
@@ -64,6 +70,9 @@
     " Insert php namespace and create class name
     nmap <silent> <C-S-F9> ggO<?php<CR><CR><ESC>"%PdF/r;:s#/#\\#g<CR>Inamespace  <ESC>d/[A-Z]<CR>Goclass <C-R>=expand("%:t:r")<CR><CR>{<CR>
 
+    nnoremap <F2> :NERDTreeToggle<CR>
+    nnoremap <F3> :TlistToggle<CR>
+
 " NERDTree
     let g:NERDTreeWinPos = "right"
 
@@ -84,9 +93,6 @@
     let Tlist_Use_Right_Window=0
     let Tlist_Sort_Type = "name" " order by
     let tlist_php_settings = 'php;c:class;d:constant;f:function' " don't show variables in php
-
-    nnoremap <f2> :NERDTreeToggle<CR>
-    nnoremap <f3> :TlistToggle<CR>
 
 " PDV
     let g:pdv_cfg_Author = "Olivier Dolbeau <contact@odolbeau.fr>"
