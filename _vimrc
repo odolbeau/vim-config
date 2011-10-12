@@ -34,6 +34,17 @@
     set showcmd                             " Show the command being typed
     set wildmode=list:longest               " Complete files like a shell.
 
+" Statusline
+    if has('statusline')
+        set laststatus=2
+
+        set statusline=%<%f\                    " Filename
+        set statusline+=%w%h%m%r                " Options
+        set statusline+=%{fugitive#statusline()} "  Git Hotness
+        set statusline+=\ [%{&ff}/%Y]           " Show filetype in statusline
+        set statusline+=\ [%{getcwd()}]          " current dir
+        set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+    endif
 
 " Editor
     set bs=indent,eol,start                 " Backspace works everywhere
