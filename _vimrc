@@ -1,6 +1,5 @@
 " Basics
     set nocompatible                        " Use defauts Vim
-    syntax enable
 
 " Pathogen install
     call pathogen#runtime_append_all_bundles()
@@ -12,6 +11,7 @@
     set encoding=UTF-8                      " Display UTF-8
 
 " Color
+    syntax enable
     set background=dark                     " dark background is better!
     let php_sql_query = 1                   " SQL queries
     let php_htmlInStrings = 1               " HTML
@@ -29,22 +29,23 @@
     set scrolloff=8                         " Keep x line for scope while scrolling
     set sidescrolloff=8                     " same same
     set showmatch                           " Show matching bracket
-    set number                              " Show line numbers in gutter
-    set ruler                               " Always show current position along the bottom
-    set showcmd                             " Show the command being typed
+
+" Completion
+    set wildmenu
     set wildmode=list:longest               " Complete files like a shell.
 
 " Statusline
-    if has('statusline')
-        set laststatus=2
+    set number                              " Show line numbers in gutter
+    set ruler                               " Always show current position along the bottom
+    set showcmd                             " Show the command being typed
 
-        set statusline=%<%f\                    " Filename
-        set statusline+=%w%h%m%r                " Options
-        set statusline+=%{fugitive#statusline()} "  Git Hotness
-        set statusline+=\ [%{&ff}/%Y]           " Show filetype in statusline
-        set statusline+=\ [%{getcwd()}]          " current dir
-        set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-    endif
+    set laststatus=2
+
+    set statusline=%<%f\                    " Filename
+    set statusline+=%w%h%m%r                " Options
+    set statusline+=\ [%{&ff}/%Y]           " Show filetype in statusline
+    set statusline+=\ [%{getcwd()}]          " current dir
+    set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
 
 " Editor
     set bs=indent,eol,start                 " Backspace works everywhere
@@ -55,7 +56,7 @@
     set listchars=trail:¤,tab:>-            " Show blank spaces and tabs at the end of a line
 
 " Search
-    set incsearch                           " Highlight matches as you type.
+    " set incsearch                           " Highlight matches as you type.
     set hlsearch                            " Highlight matches.
     set ignorecase                          " Case-insensitive searching.
     set smartcase                           " But case-sensitive if expression contains a capital letter.
