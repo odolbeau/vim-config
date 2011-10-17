@@ -58,8 +58,8 @@
 " Search
     " set incsearch                           " Highlight matches as you type.
     set hlsearch                            " Highlight matches.
-    set ignorecase                          " Case-insensitive searching.
-    set smartcase                           " But case-sensitive if expression contains a capital letter.
+    " set ignorecase                          " Case-insensitive searching.
+    " set smartcase                           " But case-sensitive if expression contains a capital letter.
 
 " Indentation
     set autoindent                          " Automatic indentation
