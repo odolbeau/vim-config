@@ -103,7 +103,7 @@ snippet vd
 	var_dump($${1});
 	${2}
 
-snippet class
+snippet cl
 	<?php
 
 	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
