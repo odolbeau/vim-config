@@ -1,5 +1,6 @@
 " Basics
     set nocompatible                        " Use defauts Vim
+    filetype off                            " deactivate filetype for pathogen to load snipmate correctly
 
 " Pathogen install
     call pathogen#runtime_append_all_bundles()
@@ -77,17 +78,30 @@
     nmap <silent> <C-F10> :%s/\s\+$//g<CR>
     nmap <silent> <C-S-F10> :%s/^\s\+$//g<CR>
 
-    " Insert php namespace
-    nmap <silent> <C-F9> <ESC>"%PdF/r;:s#/#\\#g<CR>Inamespace  <ESC>d/[A-Z]
-    " Insert php namespace and create class name
-    nmap <silent> <C-S-F9> ggO<?php<CR><CR><ESC>"%PdF/r;:s#/#\\#g<CR>Inamespace  <ESC>d/[A-Z]<CR>Goclass <C-R>=expand("%:t:r")<CR><CR>{<CR>
-
-    nnoremap <F2> :NERDTreeToggle<CR>
     nnoremap <F3> :TlistToggle<CR>
 
 " NERDTree
     let g:NERDTreeWinPos = "right"
+    nnoremap <F2> :NERDTreeToggle<CR>
 
+" TagList settings
+    let Tlist_Auto_Open=0
+    let Tlist_Use_Right_Window=0
+    let Tlist_Sort_Type = "name" " order by
+    let tlist_php_settings = 'php;c:class;d:constant;f:function' " don't show variables in php
+
+" PDV
+    let g:pdv_cfg_Author = 'Olivier Dolbeau <contact@odolbeau.fr>'
+    let g:pdv_cfg_Version = ""
+    nnoremap <leader>d :call PhpDocSingle()<CR>
+    vnoremap <leader>d :call PhpDocRange()<CR>
+
+" Snipmate
+    let g:snips_author = 'Olivier Dolbeau <contact@odolbeau.fr>'
+
+" PHP Namespace
+    imap <buffer> <F5> <C-O>:call PhpInsertUse()<CR>
+    map <buffer> <F5> :call PhpInsertUse()<CR>
 
 " MiniBufXplorer settings
     let g:miniBufExplMaxSize=2              " set max size to 2 lines
@@ -99,18 +113,6 @@
     " Minibufexpl with ,q is better than :Bclose :)
     noremap <leader>q :Bclose<CR>
     noremap <leader>q! :Bclose!<CR>
-
-" TagList settings
-    let Tlist_Auto_Open=0
-    let Tlist_Use_Right_Window=0
-    let Tlist_Sort_Type = "name" " order by
-    let tlist_php_settings = 'php;c:class;d:constant;f:function' " don't show variables in php
-
-" PDV
-    let g:pdv_cfg_Author = "Olivier Dolbeau <contact@odolbeau.fr>"
-    let g:pdv_cfg_Version = ""
-    nnoremap <leader>d :call PhpDocSingle()<CR>
-    vnoremap <leader>d :call PhpDocRange()<CR>
 
 " twig
     autocmd BufRead *.twig set filetype=htmltwig
