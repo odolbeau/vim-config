@@ -1,16 +1,3 @@
-snippet cont
-	<?php
-
-	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-
-	class ${1:module}Controller extends Controller
-	{
-		public function ${2:action}Action()
-		{
-				${3:// your action}
-		}
-	}
-
 snippet type
 	<?php
 	
@@ -28,22 +15,6 @@ snippet type
 		{
 			${3}
 		}
-	}
-
-snippet bundle
-	<?php
-
-	namespace ${1};
-
-	use Symfony\Component\HttpKernel\Bundle\Bundle;
-
-	/**
-	 * ${2:Bundle}Bundle.
-	 *
-	 * @author ${3:Olivier Dolbeau <contact@odolbeau>}
-	 */
-	class $2Bundle extends Bundle
-	{
 	}
 
 snippet command
@@ -72,18 +43,6 @@ snippet command
 		{
 		}
 	}
-snippet nrequest
-	use Symfony\Component\HttpFoundation\Request;
-snippet nresponse
-	use Symfony\Component\HttpFoundation\Response;
-snippet cgreq
-	$this->get('request')
-snippet cgem
-	$this->get('doctrine')->getEntityManager()
-snippet cgtok
-	$this->get('security.context')->getToken()
-snippet cgfor
-	$form = $this->get('form.factory')->create(new ${1:MyType}(), ${2:entity});
 snippet set
 	public function set${1:CamelCase}($${2:property})
 	{
@@ -121,13 +80,6 @@ snippet getsetlfl
 	{
 		$this->setLocaleFieldCollection('$2', $$2s);
 	}
-snippet add
-	public function add${1:Item}(${2:Class} $${3:property})
-	{
-		$this->${4:collection}->add($$3);
-	}
-snippet dcol
-	$this->${1:collection} = new Doctrine\Common\Collections\ArrayCollection();
 snippet pubfun
 	public function ${1:name}(${2})
 	{
@@ -150,3 +102,13 @@ snippet vdd
 snippet vd
 	var_dump($${1});
 	${2}
+
+snippet class
+	<?php
+
+	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
+
+	class ${2:`Filename('', 'myClass')`}
+	{
+	    ${3}
+	}
