@@ -77,6 +77,9 @@
     let mapleader   = ","
     let g:mapleader = ","
 
+    " Hit space to see next page
+    nmap <Space> <PageDown>
+
     " Delete trailing spaces
     nmap <silent> <C-F10> :%s/\s\+$//g<CR>
     nmap <silent> <C-S-F10> :%s/^\s\+$//g<CR>
