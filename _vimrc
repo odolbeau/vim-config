@@ -5,6 +5,10 @@
     call pathogen#runtime_append_all_bundles()
     call pathogen#helptags()
 
+" General
+    filetype on
+    filetype plugin indent on
+
 " Encoding
     set ff=unix                             " Unix EOL
     set fileencoding=UTF-8                  " Speak UTF-8
@@ -87,7 +91,6 @@
 
 " NERDTree
     let g:NERDTreeWinPos = "right"
-
 
 " MiniBufXplorer settings
     let g:miniBufExplMaxSize=2              " set max size to 2 lines
