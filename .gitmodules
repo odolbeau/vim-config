@@ -28,3 +28,6 @@
 [submodule "vim/bundle/checksyntax_vim"]
 	path = vim/bundle/checksyntax_vim
 	url = https://github.com/tomtom/checksyntax_vim
+[submodule "vim/bundle/vim-symfony"]
+	path = vim/bundle/vim-symfony
+	url = https://github.com/docteurklein/vim-symfony
