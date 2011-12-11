@@ -1,13 +1,17 @@
 " Basics
     set nocompatible                        " Use defauts Vim
+    filetype off                            " deactivate filetype for pathogen to load snipmate correctly
 
 " Pathogen install
     call pathogen#runtime_append_all_bundles()
     call pathogen#helptags()
 
-" General
-    filetype on
-    filetype plugin indent on
+    filetype plugin indent on               " reactivate filetype
+
+" filetype
+    autocmd BufRead *.twig set filetype=htmltwig
+    autocmd BufRead *.phps set filetype=php
+    autocmd BufRead *.phpd set filetype=php
 
 " Encoding
     set ff=unix                             " Unix EOL
@@ -33,6 +37,7 @@
     set scrolloff=8                         " Keep x line for scope while scrolling
     set sidescrolloff=8                     " same same
     set showmatch                           " Show matching bracket
+    set mouse=a                             " Activate mouse
 
 " Completion
     set wildmenu
@@ -54,8 +59,8 @@
 " Editor
     set bs=indent,eol,start                 " Backspace works everywhere
     set ruler                               " Show current cursor position
-    set history=50                          " command history size
-    set noerrorbells                        " Stop the noise!!
+    set history=1000                        " increase history size
+    set visualbell                          " No beeping.
     set list
     set listchars=trail:¤,tab:>-            " Show blank spaces and tabs at the end of a line
 
@@ -82,21 +87,14 @@
 
     " Delete trailing spaces
     nmap <silent> <C-F10> :%s/\s\+$//g<CR>
-    nmap <silent> <C-S-F10> :%s/^\s\+$//g<CR>
-
-    " Insert php namespace
-    nmap <silent> <C-F9> <ESC>"%PdF/r;:s#/#\\#g<CR>Inamespace  <ESC>d/[A-Z]
-    " Insert php namespace and create class name
-    nmap <silent> <C-S-F9> ggO<?php<CR><CR><ESC>"%PdF/r;:s#/#\\#g<CR>Inamespace  <ESC>d/[A-Z]<CR>Goclass <C-R>=expand("%:t:r")<CR><CR>{<CR>
-
-    nnoremap <F2> :NERDTreeToggle<CR>
-    nnoremap <F3> :TlistToggle<CR>
 
 " NERDTree
     let g:NERDTreeWinPos = "right"
+    nnoremap <F2> :NERDTreeToggle<CR>
+    nnoremap <F3> :TlistToggle<CR>
 
 " MiniBufXplorer settings
-    let g:miniBufExplMaxSize=2              " set max size to 2 lines
+    let g:miniBufExplMaxSize=3              " set max size to 3 lines
     let g:miniBufExplMapWindowNavVim= 1     " Navigate trough buffers with Control + [hjkl]
     let g:miniBufExplMapWindowNavArrows=1   " Navigate trough buffers with Control + Arrow Keys
     let g:miniBufExplMapCTabSwitchBufs=1    " Navigate trough buffers with <C-TAB> and <C-S-TAB>
@@ -104,24 +102,12 @@
     let g:miniBufExplSplitBelow=0           " Put new window above current or on the left for vertical split
     " Minibufexpl with ,q is better than :Bclose :)
     noremap <leader>q :Bclose<CR>
-    noremap <leader>q! :Bclose!<CR>
 
 " TagList settings
     let Tlist_Auto_Open=0
     let Tlist_Use_Right_Window=0
-    let Tlist_Sort_Type = "name" " order by
+    let Tlist_Sort_Type = "name"            " order by
     let tlist_php_settings = 'php;c:class;d:constant;f:function' " don't show variables in php
-
-" PDV
-    let g:pdv_cfg_Author = "Olivier Dolbeau <contact@odolbeau.fr>"
-    let g:pdv_cfg_Version = ""
-    nnoremap <leader>d :call PhpDocSingle()<CR>
-    vnoremap <leader>d :call PhpDocRange()<CR>
-
-" twig
-    autocmd BufRead *.twig set filetype=htmltwig
-    autocmd BufRead *.phps set filetype=php
-    autocmd BufRead *.phpd set filetype=php
 
 " use :W to force save when forgot to open file in root
     command W w !sudo tee % > /dev/null
