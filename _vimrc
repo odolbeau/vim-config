@@ -50,6 +50,7 @@
 
     set laststatus=2
 
+    set statusline+=%{SyntasticStatuslineFlag()}
     set statusline=%<%f\                    " Filename
     set statusline+=%w%h%m%r                " Options
     set statusline+=\ [%{&ff}/%Y]           " Show filetype in statusline

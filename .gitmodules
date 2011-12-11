@@ -25,12 +25,12 @@
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "vim/bundle/checksyntax_vim"]
-	path = vim/bundle/checksyntax_vim
-	url = https://github.com/tomtom/checksyntax_vim
 [submodule "vim/bundle/vim-symfony"]
 	path = vim/bundle/vim-symfony
 	url = https://github.com/docteurklein/vim-symfony
 [submodule "vim/bundle/php-getter-setter"]
 	path = vim/bundle/php-getter-setter
 	url = https://github.com/docteurklein/php-getter-setter.vim.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = https://github.com/scrooloose/syntastic
