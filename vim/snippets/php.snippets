@@ -6,14 +6,12 @@ snippet type
 	
 	/**
 	 * ${1:type}Type.
-	 *
-	 * @author ${2:Olivier Dolbeau <contact@odolbeau>}
 	 */
 	class $1Type extends AbstractType
 	{
 		public function buildForm(FormBuilder $builder, array $options)
 		{
-			${3}
+			${2}
 		}
 	}
 
@@ -112,3 +110,9 @@ snippet cl
 	{
 	    ${3}
 	}
+
+snippet inherit
+	/**
+	 * @{@inheritDoc}
+	 */
+
