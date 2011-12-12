@@ -86,8 +86,17 @@
     " Hit space to see next page
     nmap <Space> <PageDown>
 
-    " Delete trailing spaces
-    nmap <silent> <C-F10> :%s/\s\+$//g<CR>
+    "  Clean code function
+    function! CleanCode()
+        %retab          " Replace tabs with spaces
+        %s/\r/\r/eg     " Turn DOS returns ^M into real returns
+        %s=  *$==e      " Delete end of line blanks
+        echo "Cleaned up this mess."
+    endfunction
+    nmap <F10> :call CleanCode()<CR>
+
+    " Alias for Sex
+    nmap <F12> :Sex<CR>"
 
 " NERDTree
     let g:NERDTreeWinPos = "right"
@@ -111,4 +120,5 @@
     let tlist_php_settings = 'php;c:class;d:constant;f:function' " don't show variables in php
 
 " use :W to force save when forgot to open file in root
-    command W w !sudo tee % > /dev/null
+    "command W w !sudo tee % > /dev/null
+    cmap W silent write !sudo tee % >/dev/null
