@@ -93,7 +93,8 @@
         %s=  *$==e      " Delete end of line blanks
         echo "Cleaned up this mess."
     endfunction
-    nmap <F10> :call CleanCode()<CR>
+    nmap <silent> <F10> :call CleanCode()<CR>
+    nmap <silent> <C-F10> :call CleanCode()<CR>
 
     " Alias for Sex
     nmap <F12> :Sex<CR>"
