@@ -91,9 +91,9 @@
         %retab                                  " Replace tabs with spaces
         %s/\r/\r/eg                             " Turn DOS returns ^M into real returns
         %s=  *$==e                              " Delete end of line blanks
-        %s/\(.\),\([a-z0-9'"]\)/\1, \2/g        " Add space after commas if missing.
-        %s/){/) {/g                             " Add space between ) & { if missing.
-        %s/\(if\|for\|foreach\|while\)(/\1 (/g  " Add missing space betweencontrol structure  & (
+        %s/\(.\),\([a-z0-9'"]\)/\1, \2/ge       " Add space after commas if missing.
+        %s/){/) {/ge                            " Add space between ) & { if missing.
+        %s/\(if\|for\|foreach\|while\) \=( \=/\1 (/ge " Add missing space betweencontrol structure  & (
         echo "Cleaned up this mess."
     endfunction
     nmap <silent> <F10> :call CleanCode()<CR>
