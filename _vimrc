@@ -93,6 +93,7 @@
         %s=  *$==e                              " Delete end of line blanks
         %s/\(.\),\([a-z0-9'"]\)/\1, \2/g        " Add space after commas if missing.
         %s/){/) {/g                             " Add space between ) & { if missing.
+        %s/\(if\|for\|foreach\|while\)(/\1 (/g  " Add missing space betweencontrol structure  & (
         echo "Cleaned up this mess."
     endfunction
     nmap <silent> <F10> :call CleanCode()<CR>
