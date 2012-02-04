@@ -24,7 +24,6 @@
     let php_sql_query = 1                   " SQL queries
     let php_htmlInStrings = 1               " HTML
     if has('gui_running')
-        set guifont=Monospace\ 8
         let g:solarized_style="light"
         let g:solarized_contrast="high"
         colorscheme solarized
@@ -61,9 +60,12 @@
     set bs=indent,eol,start                 " Backspace works everywhere
     set ruler                               " Show current cursor position
     set history=1000                        " increase history size
+    set undolevels=1000                     " increase history size
     set visualbell                          " No beeping.
     set list
     set listchars=trail:¤,tab:>-            " Show blank spaces and tabs at the end of a line
+    set nobackup                            " No backup file!
+    set noswapfile                          " No more swap file!
 
 " Search
     " set incsearch                           " Highlight matches as you type.
@@ -82,6 +84,13 @@
     " Changing leader
     let mapleader   = ","
     let g:mapleader = ","
+
+    " Quickly edit/reload the vimrc file
+    nmap <silent> <leader>ev :e $MYVIMRC<CR>
+    nmap <silent> <leader>sv :so $MYVIMRC<CR>
+
+    " Switch to paste mode to copy a large alount of text
+    set pastetoggle=<F4>
 
     " Hit space to see next page
     nmap <Space> <PageDown>
@@ -127,12 +136,12 @@
     noremap <leader>q :Bclose<CR>
 
 " Tabular mapping
-nmap <Leader>a= :Tab /=<CR>
-vmap <Leader>a= :Tab /=<CR>
-nmap <Leader>a=> :Tab /=><CR>
-vmap <Leader>a=> :Tab /=><CR>
-nmap <Leader>a: :Tab /:\zs<CR>
-vmap <Leader>a: :Tab /:\zs<CR>
+    nmap <Leader>a= :Tab /=<CR>
+    vmap <Leader>a= :Tab /=<CR>
+    nmap <Leader>a=> :Tab /=><CR>
+    vmap <Leader>a=> :Tab /=><CR>
+    nmap <Leader>a: :Tab /:\zs<CR>
+    vmap <Leader>a: :Tab /:\zs<CR>
 
 " TagList settings
     let Tlist_Auto_Open=0
@@ -141,4 +150,4 @@ vmap <Leader>a: :Tab /:\zs<CR>
     let tlist_php_settings = 'php;c:class;d:constant;f:function' " don't show variables in php
 
 " use :W to force save when forgot to open file in root
-    command W w !sudo tee % > /dev/null
+    cmap w!! w !sudo tee % > /dev/null
