@@ -126,6 +126,14 @@
     " Minibufexpl with ,q is better than :Bclose :)
     noremap <leader>q :Bclose<CR>
 
+" Tabular mapping
+nmap <Leader>a= :Tab /=<CR>
+vmap <Leader>a= :Tab /=<CR>
+nmap <Leader>a=> :Tab /=><CR>
+vmap <Leader>a=> :Tab /=><CR>
+nmap <Leader>a: :Tab /:\zs<CR>
+vmap <Leader>a: :Tab /:\zs<CR>
+
 " TagList settings
     let Tlist_Auto_Open=0
     let Tlist_Use_Right_Window=0
