@@ -120,6 +120,12 @@
     " Alias for Sex
     nmap <F12> :Sex<CR>"
 
+" Ack
+    " do a Ack search on the word under cursor
+    nmap <leader>f :Ack <C-r><C-w><CR>
+    " do a Ack search on the selected text
+    vmap <leader>f y:Ack <C-r>"<CR>
+
 " NERDTree
     let g:NERDTreeWinPos = "right"
     nnoremap <F2> :NERDTreeToggle<CR>
