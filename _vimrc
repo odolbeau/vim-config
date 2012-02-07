@@ -141,5 +141,4 @@ vmap <Leader>a: :Tab /:\zs<CR>
     let tlist_php_settings = 'php;c:class;d:constant;f:function' " don't show variables in php
 
 " use :W to force save when forgot to open file in root
-    "command W w !sudo tee % > /dev/null
-    cmap W silent write !sudo tee % >/dev/null
+    command W w !sudo tee % > /dev/null
