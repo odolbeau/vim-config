@@ -12,6 +12,7 @@
     autocmd BufRead *.twig set filetype=htmltwig
     autocmd BufRead *.phps set filetype=php
     autocmd BufRead *.phpd set filetype=php
+    autocmd BufRead *.less set filetype=less
 
 " Encoding
     set ff=unix                             " Unix EOL
