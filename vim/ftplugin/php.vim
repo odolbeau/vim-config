@@ -8,6 +8,20 @@ map <buffer> <leader>gs <Plug>PhpgetsetInsertBothGetterSetter
 map <buffer> <leader>g <Plug>PhpgetsetInsertGetterOnly
 map <buffer> <leader>s <Plug>PhpgetsetInsertSetterOnly
 
+let b:phpgetset_getterTemplate =
+ \ "    \n" .
+ \ "    public function %funcname%()\n" .
+ \ "    {\n" .
+ \ "        return $this->%varname%;\n" .
+ \ "    }"
+
+let b:phpgetset_setterTemplate =
+ \ "    \n" .
+ \ "    public function %funcname%()\n" .
+ \ "    {\n" .
+ \ "        return $this->%varname%;\n" .
+ \ "    }"
+
 set path+=**
 
 " jump to a twig view in symfony
