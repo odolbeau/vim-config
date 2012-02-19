@@ -17,9 +17,9 @@ let b:phpgetset_getterTemplate =
 
 let b:phpgetset_setterTemplate =
  \ "    \n" .
- \ "    public function %funcname%()\n" .
+ \ "    public function %funcname%($%varname%)\n" .
  \ "    {\n" .
- \ "        return $this->%varname%;\n" .
+ \ "        $this->%varname% = $%varname%;\n" .
  \ "    }"
 
 set path+=**
