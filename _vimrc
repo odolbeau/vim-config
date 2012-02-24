@@ -157,5 +157,8 @@
     let Tlist_Sort_Type = "name"            " order by
     let tlist_php_settings = 'php;c:class;d:constant;f:function' " don't show variables in php
 
+" Command-T
+    set wildignore+=app/cache/**
+
 " use :W to force save when forgot to open file in root
     cmap w!! w !sudo tee % > /dev/null
