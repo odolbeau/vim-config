@@ -1,17 +1,29 @@
 snippet type
 	<?php
-	
+
+	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
+
 	use Symfony\Component\Form\AbstractType;
 	use Symfony\Component\Form\FormBuilder;
-	
+
 	/**
-	 * ${1:type}Type.
+	 * ${2:`Filename('', 'myType')`}Type.
 	 */
-	class $1Type extends AbstractType
+	class $2 extends AbstractType
 	{
 		public function buildForm(FormBuilder $builder, array $options)
 		{
-			${2}
+			${3}
+		}
+
+		public function getDefaultOptions(array $options)
+		{
+		    return array();
+		}
+
+		public function getName()
+		{
+		    return '';
 		}
 	}
 
@@ -59,24 +71,6 @@ snippet getset
 	public function set$1($$2)
 	{
 		$this->$2 = $$2;
-	}
-snippet getsetlfl
-	public function get${1:Property}($locale = null)
-	{
-		return $this->getLocaleFieldValue('${2:property}', (null === $locale)? $this->locale : $locale);
-	}
-	public function set$1($$2, $locale = null)
-	{
-		$this->setLocaleFieldValue('$2', (null === $locale)? $this->locale : $locale, $$2);
-	}
-
-	public function get$1s()
-	{
-		return $this->getLocaleFieldCollection('$2');
-	}
-	public function set$1s($$2s)
-	{
-		$this->setLocaleFieldCollection('$2', $$2s);
 	}
 snippet pubfun
 	public function ${1:name}(${2})
