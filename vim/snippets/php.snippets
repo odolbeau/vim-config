@@ -7,7 +7,7 @@ snippet type
 	use Symfony\Component\Form\FormBuilder;
 
 	/**
-	 * ${2:`Filename('', 'myType')`}Type.
+	 * ${2:`Filename('', 'myType')`}.
 	 */
 	class $2 extends AbstractType
 	{
@@ -27,19 +27,38 @@ snippet type
 		}
 	}
 
+snippet controller
+	<?php
+	
+	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
+	
+	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+	
+	/**
+	 * ${2:`Filename('', 'myController')`}.
+	 *
+	 * @author ${3:Olivier Dolbeau <contact@odolbeau.fr>}
+	 */
+	class $2 extends Controller
+	{
+		protected function ${4:index}Action()
+		{
+			return $this->render('${5}:${6}:$4.html.twig');
+		}
+	}
 snippet command
 	<?php
 	
-	namespace ${1:Namespace};
+	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
 	
 	use Symfony\Bundle\FrameworkBundle\Command\Command;
 	use Symfony\Component\Console\Input\InputInterface;
 	use Symfony\Component\Console\Output\OutputInterface;
 	
 	/**
-	 * ${2:Command}.
+	 * ${2:`Filename('', 'myCommand')`}.
 	 *
-	 * @author ${3:Olivier Dolbeau <contact@odolbeau>}
+	 * @author ${3:Olivier Dolbeau <contact@odolbeau.fr>}
 	 */
 	class $2 extends Command
 	{
