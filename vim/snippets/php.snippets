@@ -113,7 +113,6 @@ snippet vdd
 snippet vd
 	var_dump($${1});
 	${2}
-
 snippet cl
 	<?php
 
@@ -123,7 +122,17 @@ snippet cl
 	{
 	    ${3}
 	}
+snippet test
+	<?php
 
+	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
+
+	use ${2:`substitute(substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g'), '\\Tests', '', '') . '\\' . substitute(Filename('', 'myClass'), 'Test', '', '')`};
+
+	class ${3:`Filename('', 'myClass')`} extends \PHPUnit_Framework_TestCase
+	{
+	    ${4}
+	}
 snippet inherit
 	/**
 	 * {@inheritDoc}
