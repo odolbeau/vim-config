@@ -122,6 +122,10 @@
     " Alias for Sex
     nmap <F12> :Sex<CR>"
 
+" Undo
+    set undodir=~/.vim/backups
+    set undofile
+
 " Ack
     " do a Ack search on the word under cursor
     nmap <leader>f :Ack <C-r><C-w><CR>
