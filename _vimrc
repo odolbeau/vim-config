@@ -68,6 +68,7 @@
     set listchars=trail:¤,tab:>-            " Show blank spaces and tabs at the end of a line
     set nobackup                            " No backup file!
     set noswapfile                          " No more swap file!
+    set colorcolumn=80                      " Highlight column 80
 
 " Search
     " set incsearch                           " Highlight matches as you type.
