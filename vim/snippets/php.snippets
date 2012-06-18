@@ -4,21 +4,24 @@ snippet type
 	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
 
 	use Symfony\Component\Form\AbstractType;
-	use Symfony\Component\Form\FormBuilder;
+	use Symfony\Component\Form\FormBuilderInterface;
+	use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 	/**
 	 * ${2:`Filename('', 'myType')`}.
 	 */
 	class $2 extends AbstractType
 	{
-		public function buildForm(FormBuilder $builder, array $options)
+		public function buildForm(FormBuilderInterface $builder, array $options)
 		{
-			${3}
+			${4}
 		}
 
-		public function getDefaultOptions()
+		public function setDefaultOptions(OptionsResolverInterface $resolver)
 		{
-		    return array();
+		    $resolver->setDefaults(array(
+		        'data_class' => '${3}',
+		    ));
 		}
 
 		public function getName()
