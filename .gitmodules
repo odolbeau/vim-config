@@ -46,3 +46,6 @@
 [submodule "vim/bundle/vim-commaobject"]
 	path = vim/bundle/vim-commaobject
 	url = https://github.com/austintaylor/vim-commaobject.git
+[submodule "vim/bundle/matchit"]
+	path = vim/bundle/matchit
+	url = git://github.com/vim-scripts/matchit.zip.git
