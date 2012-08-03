@@ -109,13 +109,10 @@ snippet pre
 	echo '<pre>';
 	print_r($${1});
 	echo '</pre>';
-	${2}
 snippet vdd
 	var_dump($${1});die;
-	${2}
 snippet vd
 	var_dump($${1});
-	${2}
 snippet cl
 	<?php
 
@@ -150,4 +147,6 @@ snippet inherit
 	 * {@inheritDoc}
 	 */
 snippet ddump
+	echo '<pre>';
 	\Doctrine\Common\Util\Debug::dump(${1});
+	echo '</pre>';
