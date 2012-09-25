@@ -101,7 +101,7 @@
     "  Clean code function
     function! CleanCode()
         silent! %retab                                  " Replace tabs with spaces
-        silent! %s/\r/\r/eg                             " Turn DOS returns ^M into real returns
+        silent! %s/\r//eg                             " Turn DOS returns ^M into real returns
         silent! %s=  *$==e                              " Delete end of line blanks
         silent! %s/\%u00a0/ /g
         echo "Cleaned up this mess."
