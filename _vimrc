@@ -65,7 +65,7 @@
     set undolevels=1000                     " increase history size
     set visualbell                          " No beeping.
     set list
-    set listchars=trail:¤,tab:>-            " Show blank spaces and tabs at the end of a line
+    set listchars=trail:¤,tab:>-,nbsp:•     " Show blank spaces and tabs at the end of a line
     set nobackup                            " No backup file!
     set noswapfile                          " No more swap file!
     set colorcolumn=80                      " Highlight column 80
