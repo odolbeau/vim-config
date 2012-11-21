@@ -125,6 +125,7 @@
     let g:NERDTreeWinPos = "right"
     nnoremap <F2> :NERDTreeToggle<CR>
     nnoremap <F3> :TlistToggle<CR>
+    nnoremap <leader>o :NERDTreeFind<CR>
 
 " MiniBufXplorer settings
     let g:miniBufExplMaxSize=3              " set max size to 3 lines
