@@ -8,8 +8,8 @@
 " Syntax file description for the Processing Language
 "
 
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 
 syn keyword pdeConditional      if else break case default switch ? :
 syn keyword pdeIteration        for while
