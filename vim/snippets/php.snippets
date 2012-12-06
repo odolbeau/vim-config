@@ -122,6 +122,8 @@ snippet cl
 	{
 	    ${3}
 	}
+snippet ns
+	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
 snippet int
 	<?php
 
