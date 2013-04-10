@@ -26,7 +26,6 @@
     let php_sql_query = 1                   " SQL queries
     let php_htmlInStrings = 1               " HTML
     if has('gui_running')
-        set guifont=Monospace\ 8
         let g:solarized_style="light"
         let g:solarized_contrast="high"
         colorscheme solarized
@@ -65,6 +64,7 @@
     set history=1000                        " increase history size
     set undolevels=1000                     " increase history size
     set visualbell                          " No beeping.
+    set noerrorbells                        " No beeping.
     set list
     set listchars=trail:¤,tab:>-,nbsp:•     " Show blank spaces and tabs at the end of a line
     set nobackup                            " No backup file!
