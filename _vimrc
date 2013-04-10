@@ -26,7 +26,7 @@
     let php_sql_query = 1                   " SQL queries
     let php_htmlInStrings = 1               " HTML
     if has('gui_running')
-        set guifont=Monospace\ 8
+        set guifont=Monaco:h11
         let g:solarized_style="light"
         let g:solarized_contrast="high"
         colorscheme solarized
