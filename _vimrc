@@ -14,6 +14,7 @@
     autocmd BufRead *.phpd set filetype=php
     autocmd BufRead *.less set filetype=less
     autocmd BufRead *.pde set filetype=pde
+    autocmd BufRead *.hbs set filetype=html
 
 " Encoding
     set ff=unix                             " Unix EOL
