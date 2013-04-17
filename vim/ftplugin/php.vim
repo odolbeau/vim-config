@@ -1,3 +1,6 @@
+" Highlight column 80 + column 120 & after
+execute "set colorcolumn=80," . join(range(120,335), ',')
+
 " PDV
 let g:pdv_cfg_Author = "Olivier Dolbeau <contact@odolbeau.fr>"
 nnoremap <leader>d :call PhpDocSingle()<CR>
