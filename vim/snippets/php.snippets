@@ -54,7 +54,7 @@ snippet command
 	
 	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
 	
-	use Symfony\Bundle\FrameworkBundle\Command\Command;
+	use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 	use Symfony\Component\Console\Input\InputInterface;
 	use Symfony\Component\Console\Output\OutputInterface;
 	
@@ -63,7 +63,7 @@ snippet command
 	 *
 	 * @author ${3:Olivier Dolbeau <contact@odolbeau.fr>}
 	 */
-	class $2 extends Command
+	class $2 extends ContainerAwareCommand
 	{
 		protected function configure()
 		{
