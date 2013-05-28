@@ -15,6 +15,7 @@
     autocmd BufRead *.less set filetype=less
     autocmd BufRead *.pde set filetype=pde
     autocmd BufRead *.hbs set filetype=html
+    autocmd BufRead *.mvel set filetype=java
 
 " Encoding
     set ff=unix                             " Unix EOL
