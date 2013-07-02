@@ -145,6 +145,13 @@
     let g:miniBufExplSplitBelow=0           " Put new window above current or on the left for vertical split
     " Minibufexpl with ,q is better than :Bclose :)
     noremap <leader>q :Bclose<CR>
+    " Add mapping to navigate
+    noremap <C-Down>  <C-W>j
+    noremap <C-Up>    <C-W>k
+    noremap <C-Left>  <C-W>h
+    noremap <C-Right> <C-W>l
+    noremap <C-TAB>   :MBEbn<CR>
+    noremap <C-S-TAB> :MBEbp<CR>
 
 " Tabular mapping
     nmap <Leader>a= :Tab /=<CR>
