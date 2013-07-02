@@ -101,6 +101,12 @@
     " Hit space to see next page
     nmap <Space> <PageDown>
 
+    " Navigate trough split
+    nmap <silent> <C-Up> :wincmd k<CR>
+    nmap <silent> <C-Down> :wincmd j<CR>
+    nmap <silent> <C-Left> :wincmd h<CR>
+    nmap <silent> <C-Right> :wincmd l<CR>
+
     "  Clean code function
     function! CleanCode()
         silent! %retab                                  " Replace tabs with spaces
