@@ -2,9 +2,28 @@
     set nocompatible                        " Use defauts Vim
     filetype off                            " deactivate filetype for pathogen to load snipmate correctly
 
-" Pathogen install
-    call pathogen#runtime_append_all_bundles()
-    call pathogen#helptags()
+    set rtp+=~/.vim/bundle/vundle/
+    call vundle#rc()
+
+    Bundle 'gmarik/vundle'
+
+    Bundle 'wincent/Command-T'
+    Bundle 'scrooloose/nerdtree'
+    Bundle 'msanders/snipmate.vim'
+    Bundle 'fholgado/minibufexpl.vim'
+    Bundle 'scrooloose/nerdcommenter'
+    Bundle 'altercation/vim-colors-solarized'
+    Bundle 'vim-scripts/taglist.vim'
+    Bundle 'tpope/vim-fugitive'
+    Bundle 'docteurklein/vim-symfony'
+    Bundle 'docteurklein/php-getter-setter.vim'
+    Bundle 'scrooloose/syntastic'
+    Bundle 'godlygeek/tabular'
+    Bundle 'tpope/vim-surround'
+    Bundle 'mileszs/ack.vim'
+    Bundle 'austintaylor/vim-commaobject'
+    Bundle 'vim-scripts/matchit.zip'
+    Bundle 'tpope/vim-markdown'
 
     filetype plugin indent on               " reactivate filetype
 
