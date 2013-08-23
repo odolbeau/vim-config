@@ -110,9 +110,14 @@ snippet pre
 	print_r($${1});
 	echo '</pre>';
 snippet vdd
-	var_dump($${1});die;
-snippet vd
+	echo '<pre>';
 	var_dump($${1});
+	echo '</pre>';
+	die;
+snippet vd
+	echo '<pre>';
+	var_dump($${1});
+	echo '</pre>';
 snippet cl
 	<?php
 
