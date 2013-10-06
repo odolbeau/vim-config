@@ -7,7 +7,6 @@
 
     Bundle 'gmarik/vundle'
 
-    Bundle 'wincent/Command-T'
     Bundle 'scrooloose/nerdtree'
     Bundle 'msanders/snipmate.vim'
     Bundle 'fholgado/minibufexpl.vim'
@@ -24,6 +23,7 @@
     Bundle 'austintaylor/vim-commaobject'
     Bundle 'vim-scripts/matchit.zip'
     Bundle 'tpope/vim-markdown'
+    Bundle 'kien/ctrlp.vim'
 
     filetype plugin indent on               " reactivate filetype
 
@@ -186,8 +186,10 @@
     let Tlist_Sort_Type = "name"            " order by
     let tlist_php_settings = 'php;c:class;d:constant;f:function' " don't show variables in php
 
-" Command-T
+" CtrlP
     set wildignore+=app/cache/**
+    let g:ctrlp_map = '<leader>t'
+    "let g:ctrlp_cmd = 'CtrlP'
 
 " use :W to force save when forgot to open file in root
     cmap w!! w !sudo tee % > /dev/null
