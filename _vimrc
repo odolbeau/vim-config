@@ -187,7 +187,7 @@
     let tlist_php_settings = 'php;c:class;d:constant;f:function' " don't show variables in php
 
 " CtrlP
-    set wildignore+=app/cache/**
+    set wildignore+=*/app/cache/**
     let g:ctrlp_map = '<leader>t'
     "let g:ctrlp_cmd = 'CtrlP'
 
