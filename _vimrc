@@ -29,8 +29,6 @@
 
 " filetype
     autocmd BufRead *.twig set filetype=htmltwig
-    autocmd BufRead *.phps set filetype=php
-    autocmd BufRead *.phpd set filetype=php
     autocmd BufRead *.less set filetype=less
     autocmd BufRead *.pde set filetype=pde
     autocmd BufRead *.hbs set filetype=html
@@ -86,11 +84,8 @@
     set undolevels=1000                     " increase history size
     set visualbell                          " No beeping.
     set noerrorbells                        " No beeping.
-    set list
-    set listchars=trail:¤,tab:>-,nbsp:•     " Show blank spaces and tabs at the end of a line
     set nobackup                            " No backup file!
     set noswapfile                          " No more swap file!
-    set colorcolumn=80                      " Highlight column 80
 
 " Search
     " set incsearch                           " Highlight matches as you type.
@@ -100,9 +95,6 @@
 
 " Indentation
     set autoindent                          " Automatic indentation
-    set softtabstop=4                       " tab = 4 space
-    set shiftwidth=4
-    set expandtab                           " no more tabs, only spaces!
     set shiftround                          " when at 3 spaces, and I hit > ... go to 4, not 7
 
 " Keymap
@@ -135,9 +127,6 @@
         echo "Cleaned up this mess."
     endfunction
     nmap <silent> <F10> :call CleanCode()<CR>
-
-    " Alias for Sex
-    nmap <F12> :Sex<CR>"
 
 " Undo
     set undodir=~/.vim/backups
@@ -180,16 +169,28 @@
     nmap <Leader>a: :Tab /:\zs<CR>
     vmap <Leader>a: :Tab /:\zs<CR>
 
-" TagList settings
-    let Tlist_Auto_Open=0
-    let Tlist_Use_Right_Window=0
-    let Tlist_Sort_Type = "name"            " order by
-    let tlist_php_settings = 'php;c:class;d:constant;f:function' " don't show variables in php
-
 " CtrlP
     set wildignore+=*/app/cache/**
     let g:ctrlp_map = '<leader>t'
     "let g:ctrlp_cmd = 'CtrlP'
 
+" Highlight column 80 + column 120 & after
+    execute "set colorcolumn=80," . join(range(120,335), ',')
+
 " use :W to force save when forgot to open file in root
     cmap w!! w !sudo tee % > /dev/null
+
+" PHP Getter / Setter template. Don't work if put into vim/ftplugin
+    let b:phpgetset_getterTemplate =
+    \ "    \n" .
+    \ "    public function %funcname%()\n" .
+    \ "    {\n" .
+    \ "        return $this->%varname%;\n" .
+    \ "    }"
+
+    let b:phpgetset_setterTemplate =
+    \ "    \n" .
+    \ "    public function %funcname%($%varname%)\n" .
+    \ "    {\n" .
+    \ "        $this->%varname% = $%varname%;\n" .
+    \ "    }"
