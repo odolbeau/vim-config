@@ -33,6 +33,8 @@
     autocmd BufRead *.pde set filetype=pde
     autocmd BufRead *.hbs set filetype=html
     autocmd BufRead *.mvel set filetype=java
+    autocmd BufRead *.yml set filetype=yaml
+    autocmd BufRead *.json set filetype=json
 
 " Encoding
     set ff=unix                             " Unix EOL
