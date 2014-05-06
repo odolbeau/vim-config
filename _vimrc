@@ -175,6 +175,10 @@
     set wildignore+=*/app/cache/**
     let g:ctrlp_map = '<leader>t'
     "let g:ctrlp_cmd = 'CtrlP'
+    let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:25,results:25'
+    let g:ctrlp_show_hidden = 1
+    let g:ctrlp_max_files = 0
+    let g:ctrlp_max_depth = 100
 
 " Highlight column 80 + column 120 & after
     execute "set colorcolumn=80," . join(range(120,335), ',')
