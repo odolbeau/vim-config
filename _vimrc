@@ -24,6 +24,7 @@
     Bundle 'vim-scripts/matchit.zip'
     Bundle 'tpope/vim-markdown'
     Bundle 'kien/ctrlp.vim'
+    Bundle 'dougireton/vim-chef'
 
     filetype plugin indent on               " reactivate filetype
 
@@ -179,6 +180,9 @@
     let g:ctrlp_show_hidden = 1
     let g:ctrlp_max_files = 0
     let g:ctrlp_max_depth = 100
+
+" Syntastic
+    let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
 " Highlight column 80 + column 120 & after
     execute "set colorcolumn=80," . join(range(120,335), ',')
