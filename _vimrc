@@ -25,6 +25,7 @@
     Bundle 'tpope/vim-markdown'
     Bundle 'kien/ctrlp.vim'
     Bundle 'dougireton/vim-chef'
+    Bundle 'vim-php/vim-php-refactoring'
 
     filetype plugin indent on               " reactivate filetype
 
@@ -189,6 +190,9 @@
 
 " use :W to force save when forgot to open file in root
     cmap w!! w !sudo tee % > /dev/null
+
+" PHP refactoring
+    let g:php_refactor_command='php /usr/local/bin/refactor.phar'
 
 " PHP Getter / Setter template. Don't work if put into vim/ftplugin
     let b:phpgetset_getterTemplate =
