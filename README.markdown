@@ -1,5 +1,7 @@
 # vim config
 
+## Installation
+
 In order to install this config follow this steps:
 
 ```bash
@@ -12,5 +14,14 @@ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 vim +BundleInstall +qall
 ```
 
+## Post installation
+
 You will need to download [refactor.phar](https://github.com/QafooLabs/php-refactoring-browser).
 Put it in `/usr/local/bin/refcator.phar` or read [installation documentation](https://github.com/vim-php/vim-php-refactoring)
+
+You also need to generate tags :
+
+```bash
+ctags -R --PHP-kinds=+cf -f tags.vendors vendor
+ctags -R --PHP-kinds=+cf src
+```

@@ -26,6 +26,7 @@
     Bundle 'kien/ctrlp.vim'
     Bundle 'dougireton/vim-chef'
     Bundle 'vim-php/vim-php-refactoring'
+    Bundle 'arnaud-lb/vim-php-namespace'
 
     filetype plugin indent on               " reactivate filetype
 
@@ -90,6 +91,7 @@
     set noerrorbells                        " No beeping.
     set nobackup                            " No backup file!
     set noswapfile                          " No more swap file!
+    set tags+=./tags.vendors,tags.vendors
 
 " Search
     " set incsearch                           " Highlight matches as you type.
@@ -190,9 +192,6 @@
 
 " use :W to force save when forgot to open file in root
     cmap w!! w !sudo tee % > /dev/null
-
-" PHP refactoring
-    let g:php_refactor_command='php /usr/local/bin/refactor.phar'
 
 " PHP Getter / Setter template. Don't work if put into vim/ftplugin
     let b:phpgetset_getterTemplate =

@@ -6,7 +6,6 @@
 " Editor
     set list
     set listchars=trail:¤,tab:>-,nbsp:•     " Show blank spaces and tabs at the end of a line
-    set tags=~/.tags
 
 " PDV
     let g:pdv_cfg_Author = "Olivier Dolbeau <contact@odolbeau.fr>"
@@ -44,3 +43,10 @@
     let Tlist_Use_Right_Window=0
     let Tlist_Sort_Type = "name"            " order by
     let tlist_php_settings = 'php;c:class;d:constant;f:function' " don't show variables in php
+
+" PHP refactoring
+    let g:php_refactor_command='php /usr/local/bin/refactor.phar'
+
+" PHP namespaces
+    inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
+    noremap <Leader>u :call PhpInsertUse()<CR>
