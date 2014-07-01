@@ -177,6 +177,9 @@
 
 " CtrlP
     set wildignore+=*/app/cache/**
+    set wildignore+=*/\.subsplit/**
+    set wildignore+=*/node_modules/**
+    set wildignore+=*/\.sass-cache/**
     let g:ctrlp_map = '<leader>t'
     "let g:ctrlp_cmd = 'CtrlP'
     let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:25,results:25'
