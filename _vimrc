@@ -177,6 +177,7 @@
 
 " CtrlP
     set wildignore+=*/app/cache/**
+    set wildignore+=*/var/cache/**
     set wildignore+=*/\.subsplit/**
     set wildignore+=*/node_modules/**
     set wildignore+=*/\.sass-cache/**
