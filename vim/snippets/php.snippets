@@ -143,11 +143,16 @@ snippet test
 
 	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
 
+	use Prophecy\Argument;
+	use Prophecy\PhpUnit\ProphecyTestCase;
 	use ${2:`substitute(substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g'), '\\Tests', '', '') . '\\' . substitute(Filename('', 'myClass'), 'Test', '', '')`};
 
-	class ${3:`Filename('', 'myClass')`} extends \PHPUnit_Framework_TestCase
+	class ${3:`Filename('', 'myClass')`} extends ProphecyTestCase
 	{
-	    ${4}
+	    public function test_it_is_initializable()
+	    {
+	        $this->assertInstanceOf('${2:`substitute(substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g'), '\\Tests', '', '') . '\\' . substitute(Filename('', 'myClass'), 'Test', '', '')`}', ${4:myVar});
+	    }
 	}
 snippet inherit
 	/**
