@@ -10,7 +10,7 @@ git clone git@github.com:odolbeau/vim-config.git
 ln -s ~/vim-config/_vimrc ~/.vimrc
 ln -s ~/vim-config/vim ~/.vim
 cd ~/vim-config
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+git clone git@github.com:gmarik/Vundle.vim.git ~/.vim/bundle/vundle
 vim +BundleInstall +qall
 ```
 
