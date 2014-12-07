@@ -11,7 +11,7 @@ ln -s ~/vim-config/_vimrc ~/.vimrc
 ln -s ~/vim-config/vim ~/.vim
 cd ~/vim-config
 git clone git@github.com:gmarik/Vundle.vim.git ~/.vim/bundle/vundle
-vim +BundleInstall +qall
+vim +PluginInstall +qall
 ```
 
 ## Post installation
