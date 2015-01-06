@@ -39,6 +39,7 @@
     autocmd BufRead *.mvel set filetype=java
     autocmd BufRead *.yml set filetype=yaml
     autocmd BufRead *.json set filetype=json
+    autocmd BufRead .php_cs set filetype=php
 
 " Encoding
     set ff=unix                             " Unix EOL
