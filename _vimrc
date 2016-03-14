@@ -135,7 +135,7 @@
     nmap <silent> <F10> :call CleanCode()<CR>
 
 " Undo
-    set undodir=~/.vim/backups
+    set undodir=~/.vim/cache/backups
     set undofile
 
 " Ack
