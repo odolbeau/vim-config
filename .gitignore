@@ -1,3 +1,5 @@
 *.swp
 vim/backups
 vim/bundle
+vim/cache
+!.gitkeep

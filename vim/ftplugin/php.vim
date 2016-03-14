@@ -28,3 +28,6 @@
 " PHP namespaces
     inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
     noremap <Leader>u :call PhpInsertUse()<CR>
+
+" Use CtrlP to go to a given tag
+    map <silent> <leader>gt :CtrlPTag<cr><c-\>w

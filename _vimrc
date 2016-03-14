@@ -12,7 +12,6 @@
     Plugin 'fholgado/minibufexpl.vim'
     Plugin 'scrooloose/nerdcommenter'
     Plugin 'altercation/vim-colors-solarized'
-    Plugin 'vim-scripts/taglist.vim'
     Plugin 'tpope/vim-fugitive'
     Plugin 'docteurklein/vim-symfony'
     Plugin 'docteurklein/php-getter-setter.vim'
@@ -27,6 +26,7 @@
     Plugin 'dougireton/vim-chef'
     Plugin 'arnaud-lb/vim-php-namespace'
     Plugin 'fatih/vim-go'
+    Plugin 'ludovicchabant/vim-gutentags'
 
     filetype plugin indent on               " reactivate filetype
 
@@ -212,3 +212,7 @@
     \ "    {\n" .
     \ "        $this->%varname% = $%varname%;\n" .
     \ "    }"
+
+" Gutentags
+    let g:gutentags_exclude = ['*.css', '*.html', '*.js']
+    let g:gutentags_cache_dir = '~/.vim/cache/gutentags'
