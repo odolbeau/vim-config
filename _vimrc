@@ -23,7 +23,7 @@
     Plugin 'austintaylor/vim-commaobject'
     Plugin 'vim-scripts/matchit.zip'
     Plugin 'tpope/vim-markdown'
-    Plugin 'kien/ctrlp.vim'
+    Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'dougireton/vim-chef'
     Plugin 'arnaud-lb/vim-php-namespace'
     Plugin 'fatih/vim-go'
