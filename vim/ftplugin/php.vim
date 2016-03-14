@@ -19,33 +19,11 @@
 
     "set path+=**
 
-" jump to a twig view in symfony
-    function! s:SfJumpToView()
-        mark C
-        normal! ]M
-        let end = line(".")
-        normal! [m
-        try
-            call search('\v[^.:]+\.html\.twig', '', end)
-            normal! gf
-        catch
-            normal! g`C
-            echohl WarningMsg | echomsg "Template file not found" | echohl None
-        endtry
-    endfunction
-    com! SfJumpToView call s:SfJumpToView()
-
-" create a mapping only in a Controller file
-    autocmd BufEnter *Controller.php nmap <buffer><leader>v :SfJumpToView<CR>
-
 " TagList settings
     let Tlist_Auto_Open=0
     let Tlist_Use_Right_Window=0
     let Tlist_Sort_Type = "name"            " order by
     let tlist_php_settings = 'php;c:class;d:constant;f:function' " don't show variables in php
-
-" PHP refactoring
-    let g:php_refactor_command='php /usr/local/bin/refactor.phar'
 
 " PHP namespaces
     inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
