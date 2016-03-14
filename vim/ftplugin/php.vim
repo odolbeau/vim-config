@@ -17,14 +17,6 @@
     map <buffer> <leader>g <Plug>PhpgetsetInsertGetterOnly
     map <buffer> <leader>s <Plug>PhpgetsetInsertSetterOnly
 
-    "set path+=**
-
-" TagList settings
-    let Tlist_Auto_Open=0
-    let Tlist_Use_Right_Window=0
-    let Tlist_Sort_Type = "name"            " order by
-    let tlist_php_settings = 'php;c:class;d:constant;f:function' " don't show variables in php
-
 " PHP namespaces
     inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
     noremap <Leader>u :call PhpInsertUse()<CR>

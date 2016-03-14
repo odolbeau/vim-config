@@ -147,7 +147,6 @@
 " NERDTree
     let g:NERDTreeWinPos = "right"
     nnoremap <F2> :NERDTreeToggle<CR>
-    nnoremap <F3> :TlistToggle<CR>
     nnoremap <leader>o :NERDTreeFind<CR>
 
 " MiniBufXplorer settings
