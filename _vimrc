@@ -25,7 +25,6 @@
     Plugin 'tpope/vim-markdown'
     Plugin 'kien/ctrlp.vim'
     Plugin 'dougireton/vim-chef'
-    Plugin 'vim-php/vim-php-refactoring'
     Plugin 'arnaud-lb/vim-php-namespace'
     Plugin 'fatih/vim-go'
 
