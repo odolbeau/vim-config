@@ -27,6 +27,9 @@
     Plugin 'arnaud-lb/vim-php-namespace'
     Plugin 'fatih/vim-go'
     Plugin 'ludovicchabant/vim-gutentags'
+    " Python
+    Plugin 'vim-scripts/indentpython.vim'
+    Plugin 'nvie/vim-flake8'
 
     filetype plugin indent on               " reactivate filetype
 
