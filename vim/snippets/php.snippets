@@ -20,7 +20,7 @@ snippet type
 		public function setDefaultOptions(OptionsResolverInterface $resolver)
 		{
 		    $resolver->setDefaults(array(
-		        'data_class' => '${3}',
+			'data_class' => '${3}',
 		    ));
 		}
 
@@ -150,12 +150,12 @@ snippet test
 	{
 	    public function test_it_is_initializable()
 	    {
-	        $this->assertInstanceOf('${2:`substitute(substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g'), '\\Tests', '', '') . '\\' . substitute(Filename('', 'myClass'), 'Test', '', '')`}', ${4:myVar});
+		$this->assertInstanceOf('${2:`substitute(substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g'), '\\Tests', '', '') . '\\' . substitute(Filename('', 'myClass'), 'Test', '', '')`}', ${4:myVar});
 	    }
 	}
 snippet inherit
 	/**
-	 * {@inheritDoc}
+	 * {@inheritdoc}
 	 */
 snippet ddump
 	echo '<pre>';
@@ -165,5 +165,6 @@ snippet usereq
 	use Symfony\Component\HttpFoundation\Request;
 snippet uselog
 	use Psr\Log\LoggerInterface;
+	use Psr\Log\NullLogger;
 snippet usecon
 	use Doctrine\DBAL\Connection;
