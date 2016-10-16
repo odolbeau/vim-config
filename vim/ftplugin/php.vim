@@ -8,7 +8,6 @@
     set listchars=trail:¤,tab:>-,nbsp:•     " Show blank spaces and tabs at the end of a line
 
 " PDV
-    let g:pdv_cfg_Author = "Olivier Dolbeau <contact@odolbeau.fr>"
     nnoremap <leader>d :call PhpDocSingle()<CR>
     vnoremap <leader>d :call PhpDocRange()<CR>
 
@@ -23,3 +22,7 @@
 
 " Use CtrlP to go to a given tag
     map <silent> <leader>gt :CtrlPTag<cr><c-\>w
+
+" Others
+    let php_sql_query = 1                   " SQL queries
+    let php_htmlInStrings = 1               " HTML

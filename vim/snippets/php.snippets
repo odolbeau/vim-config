@@ -1,142 +1,22 @@
-snippet type
+snippet c
 	<?php
 
 	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
 
-	use Symfony\Component\Form\AbstractType;
-	use Symfony\Component\Form\FormBuilderInterface;
-	use Symfony\Component\OptionsResolver\OptionsResolverInterface;
-
-	/**
-	 * ${2:`Filename('', 'myType')`}.
-	 */
-	class $2 extends AbstractType
+	class ${3:`vim_snippets#Filename()`}
 	{
-		public function buildForm(FormBuilderInterface $builder, array $options)
-		{
-			${4}
-		}
-
-		public function setDefaultOptions(OptionsResolverInterface $resolver)
-		{
-		    $resolver->setDefaults(array(
-			'data_class' => '${3}',
-		    ));
-		}
-
-		public function getName()
-		{
-		    return '';
-		}
-	}
-
-snippet controller
-	<?php
-	
-	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
-	
-	use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-	
-	/**
-	 * ${2:`Filename('', 'myController')`}.
-	 *
-	 * @author ${3:Olivier Dolbeau <contact@odolbeau.fr>}
-	 */
-	class $2 extends Controller
-	{
-		public function ${4:index}Action()
-		{
-			return $this->render('${5}:${6}:$4.html.twig');
-		}
-	}
-snippet command
-	<?php
-	
-	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
-	
-	use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
-	use Symfony\Component\Console\Input\InputInterface;
-	use Symfony\Component\Console\Output\OutputInterface;
-	
-	/**
-	 * ${2:`Filename('', 'myCommand')`}.
-	 *
-	 * @author ${3:Olivier Dolbeau <contact@odolbeau.fr>}
-	 */
-	class $2 extends ContainerAwareCommand
-	{
-		protected function configure()
-		{
-			$this
-				->setName('${4}');
-		}
-
-		protected function execute(InputInterface $input, OutputInterface $output)
-		{
-		}
-	}
-snippet set
-	public function set${1:CamelCase}($${2:property})
-	{
-		$this->$2 = $$2;
-	}
-snippet get
-	public function get${1:Property}()
-	{
-		return $this->${2:property};
-	}
-snippet getset
-	public function get${1:Property}()
-	{
-		return $this->${2:property};
-	}
-	public function set$1($$2)
-	{
-		$this->$2 = $$2;
-	}
-snippet pubfun
-	public function ${1:name}(${2})
-	{
-		${3}
-	}
-snippet action
-	public function ${1:action}Action(${2})
-	{
-		${3}
-		return $this->render();
-	}
-snippet pre
-	echo '<pre>';
-	print_r($${1});
-	echo '</pre>';
-snippet vdd
-	echo '<pre>';
-	var_dump($${1});
-	echo '</pre>';
-	die;
-snippet vd
-	echo '<pre>';
-	var_dump($${1});
-	echo '</pre>';
-snippet cl
-	<?php
-
-	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
-
-	class ${2:`Filename('', 'myClass')`}
-	{
-	    ${3}
+	    ${0}
 	}
 snippet ns
-	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
-snippet int
+	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};${0}
+snippet i
 	<?php
 
 	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
 
-	interface ${2:`Filename('', 'myClass')`}
+	interface ${2:`vim_snippets#Filename()`}
 	{
-	    ${3}
+	    ${0}
 	}
 snippet test
 	<?php
@@ -144,27 +24,167 @@ snippet test
 	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
 
 	use Prophecy\Argument;
-	use ${2:`substitute(substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g'), '\\Tests', '', '') . '\\' . substitute(Filename('', 'myClass'), 'Test', '', '')`};
+	use ${2:`substitute(substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g'), '\\Tests', '', '') . '\\' . substitute(vim_snippets#Filename(), 'Test', '', '')`};
 
-	class ${3:`Filename('', 'myClass')`} extends PHPUnit_Framework_TestCase
+	class ${3:`vim_snippets#Filename()`} extends \PHPUnit_Framework_TestCase
 	{
 	    public function test_it_is_initializable()
 	    {
-		$this->assertInstanceOf('${2:`substitute(substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g'), '\\Tests', '', '') . '\\' . substitute(Filename('', 'myClass'), 'Test', '', '')`}', ${4:myVar});
+            $this->assertInstanceOf('${2:`substitute(substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g'), '\\Tests', '', '') . '\\' . substitute(vim_snippets#Filename(), 'Test', '', '')`}', ${4:myVar});${0}
 	    }
 	}
 snippet inherit
 	/**
 	 * {@inheritdoc}
 	 */
+	${0}
 snippet ddump
 	echo '<pre>';
 	\Doctrine\Common\Util\Debug::dump(${1});
 	echo '</pre>';
+	${0}
 snippet usereq
-	use Symfony\Component\HttpFoundation\Request;
+	use Symfony\Component\HttpFoundation\Request;${0}
 snippet uselog
 	use Psr\Log\LoggerInterface;
-	use Psr\Log\NullLogger;
+	use Psr\Log\NullLogger;${0}
 snippet usecon
-	use Doctrine\DBAL\Connection;
+	use Doctrine\DBAL\Connection;${0}
+snippet m
+	${1:protected} function ${2:foo}(${3})
+	{
+		${0}
+	}
+snippet sm "PHP Class Setter"
+	/**
+	 * Sets the value of ${1:foo}
+	 *
+	 * @param ${2:string} $$1 ${3:description}
+	 */
+	public function set${4:$1}(${5:$2 }$$1)
+	{
+		$this->${6:$1} = $$1;${0}
+	}
+snippet gm "PHP Class Getter Setter"
+	/**
+	 * Gets the value of ${1:foo}
+	 *
+	 * @return ${2:string}
+	 */
+	public function get${3:$1}()
+	{
+		return $this->${4:$1};${0}
+	}
+# Tertiary conditional
+snippet =?:
+	$${1:foo} = ${2:true} ? ${3:a} : ${0};
+snippet ?:
+	${1:true} ? ${2:a} : ${0}
+snippet t "$retVal = (condition) ? a : b"
+	$${1:retVal} = (${2:condition}) ? ${3:a} : ${4:b};
+snippet inheritdoc "@inheritdoc docblock"
+	/**
+	 * {@inheritdoc}
+	 */
+snippet wh "while (condition) { ... }"
+	while (${1:/* condition */}) {
+		${0}
+	}
+snippet if "if (condition) { ... }"
+	if (${1}) {
+		${0}
+	}
+snippet ife "if (cond) { ... } else { ... }"
+	if (${1}) {
+		${2}
+	} else {
+		${3}
+	}
+	${0}
+snippet switch "switch($var) { case 'xyz': ... default: .... }"
+	switch ($${1:variable}) {
+		case '${2:value}':
+			${3}
+			break;
+		${0}
+		default:
+			${4}
+			break;
+	}
+snippet for "for ($i = 0; $i < $count; $i++) { ... }"
+	for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
+		${0}
+	}
+snippet foreach "foreach ($var as $value) { .. }"
+	foreach ($${1:variable} as $${2:value}) {
+		${0}
+	}
+snippet foreachk "foreach ($var as $key => $value) { .. }"
+	foreach ($${1:variable} as $${2:key} => $${3:value}) {
+		${0}
+	}
+snippet try "try { ... } catch (Exception $e) { ... }"
+	try {
+		${0}
+	} catch (${1:Exception} $e) {
+	}
+# lambda with closure
+snippet lambda
+	${1:static }function (${2:args}) use (${3:&$x, $y /*put vars in scope (closure) */}) {
+		${0}
+	};
+# pre_dump();
+snippet pre
+	echo '<pre>'; var_dump(${0}); echo '</pre>';
+# pre_dump(); die();
+snippet pred
+	echo '<pre>'; var_dump(${1}); echo '</pre>'; die(${0:});
+snippet vd
+	var_dump(${0});
+snippet vdd
+	var_dump(${1}); die(${0:});
+# phpunit
+snippet ass "$this->assertSame()"
+	$this->assertSame(${1:expected}, ${2:actual});
+snippet ase "$this->assertEquals()"
+	$this->assertEquals(${1:expected}, ${2:actual});
+snippet asne "$this->assertNotEquals()"
+	$this->assertNotEquals(${1:expected}, ${2:actual});
+snippet ascon "$this->assertContains()"
+	$this->assertContains(${1:$needle}, ${2:$haystack});
+snippet ashk "$this->assertArrayHasKey()"
+	$this->assertArrayHasKey(${1:$key}, ${2:$array});
+snippet asnhk "$this->assertArrayNotHasKey()"
+	this->assertArrayNotHasKey(${1:$key}, ${2:$array});
+snippet asi "$this->assertInstanceOf(...)"
+	$this->assertInstanceOf(${1:expected}, ${2:actual});
+snippet test "public function testXYZ() { ... }"
+	public function test${1}()
+	{
+		${0}
+	}
+snippet setup "protected function setUp() { ... }"
+	protected function setUp()
+	{
+		${0}
+	}
+snippet teardown "protected function tearDown() { ... }"
+	protected function tearDown()
+	{
+		${0}
+	}
+snippet fail "$this->fail()"
+	$this->fail(${1});
+snippet marki "$this->markTestIncomplete()"
+	$this->markTestIncomplete(${1});
+snippet marks "$this->markTestSkipped()"
+	$this->markTestSkipped(${1});
+# end of phpunit snippets
+snippet te "throw new Exception()"
+	throw new ${1:Exception}("${2:Error Processing Request}");
+snippet ia "in_array"
+	in_array(${1:needle}, ${2:haystack})${0}
+snippet is "isset"
+	isset(${1:var})${0}
+snippet ake "array_key_exists"
+	array_key_exists($${1:key}, ${2:array})${0}
