@@ -203,14 +203,16 @@
     let g:ctrlp_max_files = 0
     let g:ctrlp_max_depth = 100
     let g:ctrlp_reuse_window = 'netrw\|help\|quickfix\|NERD'
+    let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+    let g:ctrlp_clear_cache_on_exit = 0
 
-    let g:ctrlp_user_command = {
-        \ 'types': {
-            \ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
-            \ 2: ['.hg', 'hg --cwd %s locate -I .'],
-        \ },
-        \ 'fallback': 'ack %s --nocolor -f'
-    \ }
+    "let g:ctrlp_user_command = {
+        "\ 'types': {
+            "\ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
+            "\ 2: ['.hg', 'hg --cwd %s locate -I .'],
+        "\ },
+        "\ 'fallback': 'ack %s --nocolor -f'
+    "\ }
 
 " Highlight column 80 + column 120 & after
     "execute "set colorcolumn=80," . join(range(120,335), ',')
