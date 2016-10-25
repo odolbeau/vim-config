@@ -196,7 +196,7 @@
     set wildignore+=*/node_modules/**
     set wildignore+=*/\.sass-cache/**
     set wildignore+=*/\.grunt/**
-    let g:ctrlp_map = '<leader>t'
+    let g:ctrlp_map = '<leader>p'
     "let g:ctrlp_cmd = 'CtrlP'
     let g:ctrlp_match_window = 'bottom,min:1,max:40,results:40'
     let g:ctrlp_show_hidden = 1
