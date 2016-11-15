@@ -90,6 +90,7 @@
     set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
     set list
     set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+    set scrolloff=9999              " Minimum lines to keep above and below cursor (stay in the middle with this config
 
 " Formatting
     set nowrap                      " Do not wrap long lines
