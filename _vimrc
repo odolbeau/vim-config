@@ -124,7 +124,7 @@
     set history=1000                        " increase history size
     set visualbell                          " No beeping.
     set noerrorbells                        " No beeping.
-    set backup                              " Backups are nice!
+    set nobackup                            " Remove backups
     set noswapfile                          " No more swap file!
     set tags+=./tags.vendors,tags.vendors
 
