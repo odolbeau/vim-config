@@ -32,6 +32,7 @@
     Plugin 'rhysd/conflict-marker.vim'
     Plugin 'tpope/vim-abolish.git'
     Plugin 'konfekt/fastfold'
+    Plugin 'docteurklein/php-getter-setter.vim'
 
     " Color schemes
     Plugin 'altercation/vim-colors-solarized'

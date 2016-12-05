@@ -7,14 +7,16 @@
     set list
     set listchars=trail:¤,tab:>-,nbsp:•     " Show blank spaces and tabs at the end of a line
 
-" PDV
-    nnoremap <leader>d :call PhpDocSingle()<CR>
-    vnoremap <leader>d :call PhpDocRange()<CR>
-
 " php-getter-setter (avoid conflict with command-t)
     map <buffer> <leader>gs <Plug>PhpgetsetInsertBothGetterSetter
     map <buffer> <leader>g <Plug>PhpgetsetInsertGetterOnly
     map <buffer> <leader>s <Plug>PhpgetsetInsertSetterOnly
+    let g:phpgetset_getterTemplate =
+        \ "\n" .
+        \ "    public function %funcname%()\n" .
+        \ "    {\n" .
+        \ "        return $this->%varname%;\n" .
+        \ "    }"
 
 " PHP namespaces
     inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
