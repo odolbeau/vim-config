@@ -17,6 +17,12 @@
         \ "    {\n" .
         \ "        return $this->%varname%;\n" .
         \ "    }"
+    let g:phpgetset_setterTemplate =
+        \ "\n" .
+        \ "    public function %funcname%($%varname%)\n" .
+        \ "    {\n" .
+        \ "        $this->%varname% = $%varname%;\n" .
+        \ "    }"
 
 " PHP namespaces
     inoremap <Leader>u <C-O>:call PhpInsertUse()<CR>
