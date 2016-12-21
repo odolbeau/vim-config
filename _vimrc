@@ -33,6 +33,8 @@
     Plugin 'tpope/vim-abolish.git'
     Plugin 'konfekt/fastfold'
     Plugin 'docteurklein/php-getter-setter.vim'
+    Plugin 'pangloss/vim-javascript'
+    Plugin 'mxw/vim-jsx'
 
     " Color schemes
     Plugin 'altercation/vim-colors-solarized'
@@ -262,3 +264,9 @@
 
 " PIV
     let g:DisableAutoPHPFolding = 1
+
+" jsx
+    let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+
+" Syntastic
+    let g:syntastic_javascript_checkers = ['eslint']
