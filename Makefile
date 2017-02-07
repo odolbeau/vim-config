@@ -6,3 +6,6 @@ install:
 	@if [ ! -d ${HOME}/.vim/bundle/vundle ]; then git clone git@github.com:gmarik/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim; fi
 	vim +PluginInstall +qall
 	vim +GoInstallBinaries +qall
+
+update: install
+	vim +PluginUpdate +qall

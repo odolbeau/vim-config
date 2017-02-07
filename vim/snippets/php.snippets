@@ -1,4 +1,4 @@
-snippet c
+snippet cl
 	<?php
 
 	namespace ${1:`substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g')`};
@@ -32,6 +32,61 @@ snippet test
 	    {
             $this->assertInstanceOf('${2:`substitute(substitute(substitute(expand("%:h"), '\v^\w+\/(\u)', '\1', ''), '\/', '\\\', 'g'), '\\Tests', '', '') . '\\' . substitute(vim_snippets#Filename(), 'Test', '', '')`}', ${4:myVar});${0}
 	    }
+	}
+snippet c1
+	private $${1};
+
+	public function __construct(${0}$$1)
+	{
+		$this->$1 = $$1;
+	}
+snippet c2
+	private $${1};
+	private $${2};
+
+	public function __construct(${0}$$1, $$2)
+	{
+		$this->$1 = $$1;
+		$this->$2 = $$2;
+	}
+snippet c3
+	private $${1};
+	private $${2};
+	private $${3};
+
+	public function __construct(${0}$$1, $$2, $$3)
+	{
+		$this->$1 = $$1;
+		$this->$2 = $$2;
+		$this->$3 = $$3;
+	}
+snippet c4
+	private $${1};
+	private $${2};
+	private $${3};
+	private $${4};
+
+	public function __construct(${0}$$1, $$2, $$3, $$4)
+	{
+		$this->$1 = $$1;
+		$this->$2 = $$2;
+		$this->$3 = $$3;
+		$this->$4 = $$4;
+	}
+snippet c5
+	private $${1};
+	private $${2};
+	private $${3};
+	private $${4};
+	private $${5};
+
+	public function __construct(${0}$$1, $$2, $$3, $$4, $$5)
+	{
+		$this->$1 = $$1;
+		$this->$2 = $$2;
+		$this->$3 = $$3;
+		$this->$4 = $$4;
+		$this->$5 = $$5;
 	}
 snippet inherit
 	/**
@@ -118,11 +173,6 @@ snippet asnhk "$this->assertArrayNotHasKey()"
 	this->assertArrayNotHasKey(${1:$key}, ${2:$array});
 snippet asi "$this->assertInstanceOf(...)"
 	$this->assertInstanceOf(${1:expected}, ${2:actual});
-snippet test "public function testXYZ() { ... }"
-	public function test${1}()
-	{
-		${0}
-	}
 snippet fail "$this->fail()"
 	$this->fail(${1});
 snippet marki "$this->markTestIncomplete()"
