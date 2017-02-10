@@ -10,7 +10,6 @@
     " Plugins
     Plugin 'Shougo/neocomplete.vim.git'
     Plugin 'Shougo/neosnippet'
-    Plugin 'honza/vim-snippets'
     Plugin 'scrooloose/nerdtree'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
@@ -250,10 +249,7 @@
     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " neosnippet
-    " Enable snipMate compatibility feature.
-    "let g:neosnippet#disable_runtime_snippets = 1
-    "let g:neosnippet#enable_snipmate_compatibility = 1
-    let g:neosnippet#snippets_directory='~/.vim/snippets'
+    let g:neosnippet#enable_snipmate_compatibility = 1
     " SuperTab like snippets behavior.
     imap <expr><TAB>
      \ pumvisible() ? "\<C-n>\<CR>\<Plug>(neosnippet_expand_or_jump)" :
