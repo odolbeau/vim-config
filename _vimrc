@@ -84,8 +84,6 @@
     set showmatch                   " Show matching brackets/parenthesis
     set hlsearch                    " Highlight search terms
     set winminheight=0              " Windows can be 0 line high
-    set ignorecase                  " Case insensitive search
-    set smartcase                   " Case sensitive when uc present
     set wildmenu                    " Show list instead of just completing
     set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
     set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
@@ -249,7 +247,11 @@
     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
 " neosnippet
-    let g:neosnippet#enable_snipmate_compatibility = 1
+    "let g:neosnippet#enable_snipmate_compatibility = 1
+    let g:neosnippet#snippets_directory='~/.vim/snippets'
+    let g:neosnippet#disable_runtime_snippets = {
+        \   '_' : 1,
+        \ }
     " SuperTab like snippets behavior.
     imap <expr><TAB>
      \ pumvisible() ? "\<C-n>\<CR>\<Plug>(neosnippet_expand_or_jump)" :
