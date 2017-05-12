@@ -33,6 +33,7 @@
     Plugin 'docteurklein/php-getter-setter.vim'
     Plugin 'pangloss/vim-javascript'
     Plugin 'mxw/vim-jsx'
+    Plugin 'drmikehenry/vim-fontsize'
 
     " Color schemes
     Plugin 'altercation/vim-colors-solarized'
