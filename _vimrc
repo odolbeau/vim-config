@@ -91,6 +91,7 @@
     set list
     set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
     set scrolloff=9999              " Minimum lines to keep above and below cursor (stay in the middle with this config
+    set nospell                     " No spell check
 
 " Formatting
     set nowrap                      " Do not wrap long lines
@@ -112,6 +113,7 @@
     autocmd BufRead *.yml set filetype=yaml
     autocmd BufRead *.json set filetype=json
     autocmd BufRead .php_cs set filetype=php
+    autocmd BufRead .md set filetype=markdown
 
 " Encoding
     set ff=unix                             " Unix EOL
