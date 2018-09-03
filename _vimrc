@@ -46,7 +46,7 @@
     set mousehide               " Hide the mouse cursor while typing
 
     " Colors
-    set background=dark
+    set background=light
     let g:solarized_termtrans=1
     let g:solarized_contrast="normal"
     let g:solarized_visibility="normal"
