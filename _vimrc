@@ -46,7 +46,7 @@
     set mousehide               " Hide the mouse cursor while typing
 
     " Colors
-    set background=light
+    set background=dark
     let g:solarized_termtrans=1
     let g:solarized_contrast="normal"
     let g:solarized_visibility="normal"
@@ -55,6 +55,7 @@
     " GUI only
     if has('gui_running')
         set guioptions-=T           " Remove the toolbar
+        set background=light
     endif
 
     " Instead of reverting the cursor to the last position in the buffer, we set it to the first line when editing a git commit message
