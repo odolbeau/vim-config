@@ -8,7 +8,7 @@
     Plugin 'gmarik/vundle'
 
     " Plugins
-    Plugin 'Shougo/neocomplete.vim.git'
+    Plugin 'Shougo/neocomplete.vim'
     Plugin 'Shougo/neosnippet'
     Plugin 'scrooloose/nerdtree'
     Plugin 'vim-airline/vim-airline'
@@ -17,46 +17,35 @@
     Plugin 'scrooloose/nerdcommenter'
     Plugin 'tpope/vim-fugitive'
     Plugin 'scrooloose/syntastic'
-    Bundle 'spf13/PIV'
-    Bundle 'arnaud-lb/vim-php-namespace'
-    Bundle 'beyondwords/vim-twig'
-    Plugin 'godlygeek/tabular'
+    Bundle 'lumiliet/vim-twig'
     Plugin 'tpope/vim-surround'
-    Plugin 'mileszs/ack.vim'
     Plugin 'geoffharcourt/vim-matchit'
     Plugin 'tpope/vim-markdown'
     Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'fatih/vim-go'
-    Plugin 'rhysd/conflict-marker.vim'
     Plugin 'tpope/vim-abolish.git'
-    Plugin 'konfekt/fastfold'
-    Plugin 'docteurklein/php-getter-setter.vim'
     Plugin 'pangloss/vim-javascript'
     Plugin 'mxw/vim-jsx'
     Plugin 'drmikehenry/vim-fontsize'
+    Plugin 'ludovicchabant/vim-gutentags'
 
     " Color schemes
     Plugin 'altercation/vim-colors-solarized'
 
     cal vundle#end()
 
-    filetype plugin indent on   " Automatically detect file types.
-    syntax on                   " Syntax highlighting
-    set mouse=a                 " Automatically enable mouse usage
-    set mousehide               " Hide the mouse cursor while typing
-
     " Colors
-    set background=dark
+    syntax enable " Syntax highlighting
+    set ttymouse=xterm
     let g:solarized_termtrans=1
     let g:solarized_contrast="normal"
-    let g:solarized_visibility="normal"
-    color solarized
+    let g:solarized_termcolors=256
+    set background=dark
+    colorscheme solarized
 
-    " GUI only
-    if has('gui_running')
-        set guioptions-=T           " Remove the toolbar
-        set background=light
-    endif
+    filetype plugin indent on " Automatically detect file types.
+    set mouse=a " Automatically enable mouse usage
+    set mousehide " Hide the mouse cursor while typing
 
     " Instead of reverting the cursor to the last position in the buffer, we set it to the first line when editing a git commit message
     au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
@@ -125,13 +114,13 @@
     set bs=indent,eol,start                 " Backspace works everywhere
     "set ruler                               " Show current cursor position
     set history=1000                        " increase history size
-    set visualbell                          " No beeping.
+    set novisualbell                        " No blinking.
     set noerrorbells                        " No beeping.
     set nobackup                            " Remove backups
     set noswapfile                          " No more swap file!
     set tags+=./tags.vendors,tags.vendors
-
-" Search
+    set hid                                 " Change buffer without saving
+    set ttyfast                             " Smoother changes when drawing terminal
 
 " Indentation
     set shiftround                          " when at 3 spaces, and I hit > ... go to 4, not 7
@@ -143,6 +132,7 @@
 
     " Quickly edit/reload the vimrc file
     nmap <silent> <leader>ev :e $MYVIMRC<CR>
+    autocmd! bufwritepost vimrc source ~/.vimrc
     nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
     " Hit space to see next page
@@ -153,6 +143,10 @@
     nmap <silent> <C-Down> :wincmd j<CR>
     nmap <silent> <C-Left> :wincmd h<CR>
     nmap <silent> <C-Right> :wincmd l<CR>
+
+    " Navigate trough buffers
+    nmap <silent> <S-Left> :bprevious<CR>
+    nmap <silent> <S-Right> :bnext<CR>
 
     " Close buffers
     noremap <leader>q :Bclose<CR>
@@ -185,14 +179,6 @@
     nnoremap <F2> :NERDTreeToggle<CR>
     nnoremap <leader>o :NERDTreeFind<CR>
 
-" Tabular mapping
-    nmap <Leader>a= :Tab /=<CR>
-    vmap <Leader>a= :Tab /=<CR>
-    nmap <Leader>a=> :Tab /=><CR>
-    vmap <Leader>a=> :Tab /=><CR>
-    nmap <Leader>a: :Tab /:\zs<CR>
-    vmap <Leader>a: :Tab /:\zs<CR>
-
 " CtrlP
     set wildignore+=*/app/cache/**
     set wildignore+=*/var/cache/**
@@ -205,7 +191,7 @@
     let g:ctrlp_match_window = 'bottom,min:1,max:40,results:40'
     let g:ctrlp_show_hidden = 1
     let g:ctrlp_max_files = 0
-    let g:ctrlp_max_depth = 100
+    let g:ctrlp_max_depth = 200
     let g:ctrlp_reuse_window = 'netrw\|help\|quickfix\|NERD'
     let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
     let g:ctrlp_clear_cache_on_exit = 0
@@ -219,7 +205,7 @@
     "\ }
 
 " Highlight column 80 + column 120 & after
-    "execute "set colorcolumn=80," . join(range(120,335), ',')
+    execute "set colorcolumn=80,120"
 
 " use :W to force save when forgot to open file in root
     cmap w!! w !sudo tee % > /dev/null
@@ -262,9 +248,6 @@
      \ neosnippet#expandable_or_jumpable() ?
      \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
     smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-
-" PIV
-    let g:DisableAutoPHPFolding = 1
 
 " jsx
     let g:jsx_ext_required = 0 " Allow JSX in normal JS files
