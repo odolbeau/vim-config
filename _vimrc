@@ -38,7 +38,7 @@
     syntax enable " Syntax highlighting
     set ttymouse=xterm
     let g:solarized_termtrans=1
-    let g:solarized_contrast="normal"
+    let g:solarized_contrast="high"
     let g:solarized_termcolors=256
     set background=dark
     colorscheme solarized
@@ -95,7 +95,6 @@
     set nofoldenable                " disable folding
 
 " filetype
-    autocmd BufRead *.twig set filetype=htmltwig
     autocmd BufRead *.less set filetype=less
     autocmd BufRead *.pde set filetype=pde
     autocmd BufRead *.hbs set filetype=html
@@ -134,9 +133,6 @@
     nmap <silent> <leader>ev :e $MYVIMRC<CR>
     autocmd! bufwritepost vimrc source ~/.vimrc
     nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
-    " Hit space to see next page
-    nmap <Space> <PageDown>
 
     " Navigate trough split
     nmap <silent> <C-Up> :wincmd k<CR>
