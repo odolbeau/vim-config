@@ -82,6 +82,7 @@
     set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
     set scrolloff=9999              " Minimum lines to keep above and below cursor (stay in the middle with this config
     set nospell                     " No spell check
+    set autoread                    " Auto reload a file change outside vim
 
 " Formatting
     set nowrap                      " Do not wrap long lines
