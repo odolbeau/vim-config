@@ -251,3 +251,6 @@
 
 " Syntastic
     let g:syntastic_javascript_checkers = ['eslint']
+
+" Guttentags
+    let g:gutentags_ctags_exclude = ['var/cache', 'var/log', 'node_modules', 'public/bundles', 'vendor/*Test.php']
