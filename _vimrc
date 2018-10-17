@@ -35,6 +35,10 @@
     cal vundle#end()
     filetype plugin indent on " Automatically detect file types. Required when using vundle
 
+    " Enable mouse
+    set mouse=a
+    set ttymouse=xterm2
+
     " Colors
     syntax enable " Syntax highlighting
     let g:solarized_termtrans=1
