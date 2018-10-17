@@ -1,11 +1,11 @@
 " Basics
     set nocompatible " Required by vundle
-    filetype off
-    set rtp+=~/.vim/bundle/Vundle.vim
+    filetype off " Required by vundle
+    set rtp+=~/.vim/bundle/Vundle.vim " Update runtime path
     call vundle#begin()
 
     " Let bundle manage itself
-    Plugin 'gmarik/vundle'
+    Plugin 'VundleVim/Vundle.vim'
 
     " Plugins
     Plugin 'Shougo/neocomplete.vim'
@@ -33,19 +33,15 @@
     Plugin 'altercation/vim-colors-solarized'
 
     cal vundle#end()
+    filetype plugin indent on " Automatically detect file types. Required when using vundle
 
     " Colors
     syntax enable " Syntax highlighting
-    set ttymouse=xterm
     let g:solarized_termtrans=1
     let g:solarized_contrast="high"
     let g:solarized_termcolors=256
     set background=dark
     colorscheme solarized
-
-    filetype plugin indent on " Automatically detect file types.
-    set mouse=a " Automatically enable mouse usage
-    set mousehide " Hide the mouse cursor while typing
 
     " Instead of reverting the cursor to the last position in the buffer, we set it to the first line when editing a git commit message
     au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
@@ -66,34 +62,34 @@
 
     set cursorline " Highlight the current line
 
-    set ruler                   " Show the ruler
+    set ruler " Show the ruler
     set rulerformat=%30(%=\:b%n%y%m%r%w\ %l,%c%V\ %P%) " A ruler on steroids
 
-    set backspace=indent,eol,start  " Backspace for dummies
-    set linespace=0                 " No extra spaces between rows
-    set number                      " Line numbers on
-    set showmatch                   " Show matching brackets/parenthesis
-    set hlsearch                    " Highlight search terms
-    set winminheight=0              " Windows can be 0 line high
-    set wildmenu                    " Show list instead of just completing
-    set wildmode=list:longest,full  " Command <Tab> completion, list matches, then longest common part, then all.
-    set whichwrap=b,s,h,l,<,>,[,]   " Backspace and cursor keys wrap too
+    set backspace=indent,eol,start " Backspace for dummies
+    set linespace=0 " No extra spaces between rows
+    set number " Line numbers on
+    set showmatch " Show matching brackets/parenthesis
+    set hlsearch " Highlight search terms
+    set winminheight=0 " Windows can be 0 line high
+    set wildmenu " Show list instead of just completing
+    set wildmode=list:longest,full " Command <Tab> completion, list matches, then longest common part, then all.
+    set whichwrap=b,s,h,l,<,>,[,] " Backspace and cursor keys wrap too
     set list
     set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
-    set scrolloff=9999              " Minimum lines to keep above and below cursor (stay in the middle with this config
-    set nospell                     " No spell check
-    set autoread                    " Auto reload a file change outside vim
+    set scrolloff=9999 " Minimum lines to keep above and below cursor (stay in the middle with this config
+    set nospell " No spell check
+    set autoread " Auto reload a file change outside vim
 
 " Formatting
-    set nowrap                      " Do not wrap long lines
-    set autoindent                  " Indent at the same level of the previous line
-    set shiftwidth=4                " Use indents of 4 spaces
-    set expandtab                   " Tabs are spaces, not tabs
-    set tabstop=4                   " An indentation every four columns
-    set softtabstop=4               " Let backspace delete indent
-    set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
-    set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
-    set nofoldenable                " disable folding
+    set nowrap " Do not wrap long lines
+    set autoindent " Indent at the same level of the previous line
+    set shiftwidth=4 " Use indents of 4 spaces
+    set expandtab " Tabs are spaces, not tabs
+    set tabstop=4 " An indentation every four columns
+    set softtabstop=4 " Let backspace delete indent
+    set nojoinspaces " Prevents inserting two spaces after punctuation on a join (J)
+    set pastetoggle=<F12> " pastetoggle (sane indentation on pastes)
+    set nofoldenable " disable folding
 
 " filetype
     autocmd BufRead *.less set filetype=less
@@ -106,24 +102,24 @@
     autocmd BufRead .md set filetype=markdown
 
 " Encoding
-    set ff=unix                             " Unix EOL
-    set fileencoding=UTF-8                  " Speak UTF-8
-    set encoding=UTF-8                      " Display UTF-8
+    set ff=unix " Unix EOL
+    set fileencoding=UTF-8 " Speak UTF-8
+    set encoding=UTF-8 " Display UTF-8
 
 " Editor
-    set bs=indent,eol,start                 " Backspace works everywhere
-    "set ruler                               " Show current cursor position
-    set history=1000                        " increase history size
-    set novisualbell                        " No blinking.
-    set noerrorbells                        " No beeping.
-    set nobackup                            " Remove backups
-    set noswapfile                          " No more swap file!
+    set bs=indent,eol,start " Backspace works everywhere
+    "set ruler " Show current cursor position
+    set history=1000 " increase history size
+    set novisualbell " No blinking.
+    set noerrorbells " No beeping.
+    set nobackup " Remove backups
+    set noswapfile " No more swap file!
     set tags+=./tags.vendors,tags.vendors
-    set hid                                 " Change buffer without saving
-    set ttyfast                             " Smoother changes when drawing terminal
+    set hid " Change buffer without saving
+    set ttyfast " Smoother changes when drawing terminal
 
 " Indentation
-    set shiftround                          " when at 3 spaces, and I hit > ... go to 4, not 7
+    set shiftround " when at 3 spaces, and I hit > ... go to 4, not 7
 
 " Keymap
     " Changing leader
@@ -148,11 +144,11 @@
     " Close buffers
     noremap <leader>q :Bclose<CR>
 
-    "  Clean code function
+    " Clean code function
     function! CleanCode()
-        silent! %retab                                  " Replace tabs with spaces
-        silent! %s/\r//eg                             " Turn DOS returns ^M into real returns
-        silent! %s=  *$==e                              " Delete end of line blanks
+        silent! %retab " Replace tabs with spaces
+        silent! %s/\r//eg " Turn DOS returns ^M into real returns
+        silent! %s=  *$==e " Delete end of line blanks
         echo "Cleaned up this mess."
     endfunction
     nmap <silent> <F10> :call CleanCode()<CR>
@@ -193,14 +189,6 @@
     let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
     let g:ctrlp_clear_cache_on_exit = 0
 
-    "let g:ctrlp_user_command = {
-        "\ 'types': {
-            "\ 1: ['.git', 'cd %s && git ls-files . --cached --exclude-standard --others'],
-            "\ 2: ['.hg', 'hg --cwd %s locate -I .'],
-        "\ },
-        "\ 'fallback': 'ack %s --nocolor -f'
-    "\ }
-
 " Highlight column 80 + column 120 & after
     execute "set colorcolumn=80,120"
 
@@ -210,7 +198,7 @@
 " vim-airline
     let g:airline#extensions#tabline#enabled = 1
     let g:airline_theme='solarized'
-    let g:airline_left_sep='›'  " Slightly fancier than '>'
+    let g:airline_left_sep='›' " Slightly fancier than '>'
     let g:airline_right_sep='‹' " Slightly fancier than '<'
     let g:airline_section_c = '%{getcwd()}/%t'
 
