@@ -27,7 +27,6 @@
     Plugin 'pangloss/vim-javascript'
     Plugin 'mxw/vim-jsx'
     Plugin 'drmikehenry/vim-fontsize'
-    Plugin 'ludovicchabant/vim-gutentags'
 
     " Color schemes
     Plugin 'altercation/vim-colors-solarized'
@@ -243,6 +242,3 @@
 
 " Syntastic
     let g:syntastic_javascript_checkers = ['eslint']
-
-" Guttentags
-    let g:gutentags_ctags_exclude = ['var/cache', 'var/log', 'node_modules', 'public/bundles', 'vendor/*Test.php']
