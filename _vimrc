@@ -193,7 +193,7 @@
     let g:ctrlp_clear_cache_on_exit = 0
 
 " Highlight column 80 + column 120 & after
-    execute "set colorcolumn=80,120"
+    set colorcolumn=80,120
 
 " use :W to force save when forgot to open file in root
     cmap w!! w !sudo tee % > /dev/null
