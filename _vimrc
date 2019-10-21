@@ -22,7 +22,6 @@
     Plugin 'geoffharcourt/vim-matchit'
     Plugin 'tpope/vim-markdown'
     Plugin 'ctrlpvim/ctrlp.vim'
-    Plugin 'fatih/vim-go'
     Plugin 'tpope/vim-abolish.git'
     Plugin 'pangloss/vim-javascript'
     Plugin 'mxw/vim-jsx'
