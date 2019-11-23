@@ -41,7 +41,7 @@ snippet uselog
 snippet usecon
 	use Doctrine\DBAL\Connection;${0}
 snippet m
-	${1:public} function ${2:foo}(${3})
+	${1:public} function ${2}(${3}): ${4}
 	{
 		${0}
 	}
@@ -57,7 +57,6 @@ snippet switch "switch($var) { case 'xyz': ... default: .... }"
 		${0}
 		default:
 			${4}
-			break;
 	}
 snippet for "for ($i = 0; $i < $count; $i++) { ... }"
 	for ($${2:i} = 0; $$2 < ${1:count}; $$2${3:++}) {
@@ -74,31 +73,7 @@ snippet try "try { ... } catch (Exception $e) { ... }"
 	}
 snippet pre
 	echo '<pre>'; dump(${0}); echo '</pre>';
-# phpunit
-snippet ass "$this->assertSame()"
-	$this->assertSame(${1:expected}, ${2:actual});
-snippet ase "$this->assertEquals()"
-	$this->assertEquals(${1:expected}, ${2:actual});
-snippet asne "$this->assertNotEquals()"
-	$this->assertNotEquals(${1:expected}, ${2:actual});
-snippet ascon "$this->assertContains()"
-	$this->assertContains(${1:$needle}, ${2:$haystack});
-snippet ashk "$this->assertArrayHasKey()"
-	$this->assertArrayHasKey(${1:$key}, ${2:$array});
-snippet asnhk "$this->assertArrayNotHasKey()"
-	this->assertArrayNotHasKey(${1:$key}, ${2:$array});
-snippet asi "$this->assertInstanceOf(...)"
-	$this->assertInstanceOf(${1:expected}, ${2:actual});
-snippet fail "$this->fail()"
-	$this->fail(${1});
-snippet marki "$this->markTestIncomplete()"
-	$this->markTestIncomplete(${1});
-snippet marks "$this->markTestSkipped()"
-	$this->markTestSkipped(${1});
-# end of phpunit snippets
 snippet te "throw new Exception()"
 	throw new ${1:Exception}("${2:Error Processing Request}");
-snippet ake "array_key_exists"
-	array_key_exists($${1:key}, ${2:array})${0}
 snippet dst "declare strict types"
 	declare(strict_types=1);${0}
