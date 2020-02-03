@@ -77,7 +77,7 @@
     set wildmode=list:longest,full " Command <Tab> completion, list matches, then longest common part, then all.
     set whichwrap=b,s,h,l,<,>,[,] " Backspace and cursor keys wrap too
     set list
-    set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespace
+    set listchars=trail:¤,tab:>-,nbsp:• " Show blank spaces and tabs at the end of a line
     set scrolloff=9999 " Minimum lines to keep above and below cursor (stay in the middle with this config
     set nospell " No spell check
     set autoread " Auto reload a file change outside vim
@@ -94,10 +94,6 @@
     set nofoldenable " disable folding
 
 " filetype
-    autocmd BufRead *.less set filetype=less
-    autocmd BufRead *.pde set filetype=pde
-    autocmd BufRead *.hbs set filetype=html
-    autocmd BufRead *.mvel set filetype=java
     autocmd BufRead *.yml set filetype=yaml
     autocmd BufRead *.json set filetype=json
     autocmd BufRead .php_cs set filetype=php
