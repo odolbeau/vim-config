@@ -9,7 +9,7 @@
 
     " Plugins
     Plugin 'Shougo/neocomplete.vim'
-    Plugin 'Shougo/neosnippet'
+    Plugin 'SirVer/ultisnips'
     Plugin 'scrooloose/nerdtree'
     Plugin 'vim-airline/vim-airline'
     Plugin 'vim-airline/vim-airline-themes'
@@ -77,7 +77,7 @@
     set wildmode=list:longest,full " Command <Tab> completion, list matches, then longest common part, then all.
     set whichwrap=b,s,h,l,<,>,[,] " Backspace and cursor keys wrap too
     set list
-    set listchars=trail:¤,tab:>-,nbsp:• " Show blank spaces and tabs at the end of a line
+    set listchars=tab:›-,trail:¤,nbsp:• " Highlight problematic whitespace
     set scrolloff=9999 " Minimum lines to keep above and below cursor (stay in the middle with this config
     set nospell " No spell check
     set autoread " Auto reload a file change outside vim
@@ -208,10 +208,7 @@
     let g:acp_enableAtStartup = 0
     let g:neocomplete#enable_at_startup = 1
     let g:neocomplete#enable_smart_case = 1
-    inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-    function! s:my_cr_function()
-        return pumvisible() ? "\<C-y>" : "\<CR>"
-    endfunction
+    inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
     " Enable omni completion.
     autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
     autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -219,18 +216,9 @@
     autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
     autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 
-" neosnippet
-    "let g:neosnippet#enable_snipmate_compatibility = 1
-    let g:neosnippet#snippets_directory='~/.vim/snippets'
-    let g:neosnippet#disable_runtime_snippets = {
-        \   '_' : 1,
-        \ }
-    " SuperTab like snippets behavior.
-    imap <expr><TAB>
-     \ pumvisible() ? "\<C-n>\<CR>\<Plug>(neosnippet_expand_or_jump)" :
-     \ neosnippet#expandable_or_jumpable() ?
-     \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-    smap <expr><TAB> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+" Ultisnip
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsJumpForwardTrigger="<tab>"
 
 " jsx
     let g:jsx_ext_required = 0 " Allow JSX in normal JS files

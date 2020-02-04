@@ -1,0 +1,83 @@
+snippet gs "PHP Class Getter" b
+public function get${1/\w+\s*/\u$0/}(): $2
+{
+    return $this->$1;
+}
+
+public function set${1/\w+\s*/\u$0/}(${2} $$1): void
+{
+    $this->$1 = $$1;
+}
+endsnippet
+
+snippet c1 "Constructor with 1 argument" b
+private $${1};
+
+public function __construct(${2} $$1)
+{
+    $this->$1 = $$1;
+}
+
+${0}
+endsnippet
+
+snippet c2 "Constructor with 2 arguments" b
+private $${1};
+private $${2};
+
+public function __construct(${3} $$1, ${4} $$2)
+{
+    $this->$1 = $$1;
+    $this->$2 = $$2;
+}
+
+${0}
+endsnippet
+
+snippet c3 "Constructor with 3 arguments" b
+private $${1};
+private $${2};
+private $${3};
+
+public function __construct(${4} $$1, ${5} $$2, ${6} $$3)
+{
+    $this->$1 = $$1;
+    $this->$2 = $$2;
+    $this->$3 = $$3;
+}
+
+${0}
+endsnippet
+
+snippet inherit "Inherit doc block" b
+/**
+ * {@inheritdoc}
+ */
+${0}
+endsnippet
+
+snippet dd "Dump & die" b
+dump(${1});die;
+${0}
+endsnippet
+
+snippet usereq "Require Symfony request" b
+use Symfony\Component\HttpFoundation\Request;${0}
+endsnippet
+
+snippet m "Create a new method" b
+${1:public} function ${2}(${3}): ${4}
+{
+    ${0}
+}
+endsnippet
+
+snippet for "for ($i = 0; $i < $count; ++$i) { ... }" b
+for ($${1:i} = 0; $$1 < ${2:count}; ++$$1) {
+    ${0}
+}
+endsnippet
+
+snippet dst "declare strict types" b
+declare(strict_types=1);${0}
+endsnippet
