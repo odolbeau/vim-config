@@ -1,9 +1,23 @@
-snippet gs "PHP Class Getter" b
+snippet gs "PHP Class Getter / Setter" b
 public function get${1/\w+\s*/\u$0/}(): $2
 {
     return $this->$1;
 }
 
+public function set${1/\w+\s*/\u$0/}(${2} $$1): void
+{
+    $this->$1 = $$1;
+}
+endsnippet
+
+snippet get "PHP Class Getter" b
+public function get${1/\w+\s*/\u$0/}(): $2
+{
+    return $this->$1;
+}
+endsnippet
+
+snippet set "PHP Class Setter" b
 public function set${1/\w+\s*/\u$0/}(${2} $$1): void
 {
     $this->$1 = $$1;
