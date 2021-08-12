@@ -16,7 +16,7 @@
     Plugin 'bling/vim-bufferline'
     Plugin 'scrooloose/nerdcommenter'
     Plugin 'tpope/vim-fugitive'
-    Plugin 'scrooloose/syntastic'
+    Plugin 'vim-syntastic/syntastic'
     Bundle 'lumiliet/vim-twig'
     Plugin 'tpope/vim-surround'
     Plugin 'geoffharcourt/vim-matchit'
