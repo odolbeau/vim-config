@@ -42,7 +42,7 @@
     "let g:solarized_termtrans=1
     let g:solarized_contrast="high"
     let g:solarized_termcolors=256
-    colorscheme solarized
+    silent! colorscheme solarized
     set background=light
 
     " Instead of reverting the cursor to the last position in the buffer, we set it to the first line when editing a git commit message
