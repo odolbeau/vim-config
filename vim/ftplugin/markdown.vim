@@ -1,5 +1,5 @@
 " Spell checking
 " More information: https://www.linux.com/learn/using-spell-checking-vim
-set spell spelllang=fr
+setlocal spell spelllang=fr
 
-set wrap " Wrap long lines
+setlocal wrap " Wrap long lines

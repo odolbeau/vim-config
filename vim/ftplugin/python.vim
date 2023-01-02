@@ -1,6 +1,6 @@
 " Indentation
-    set fileformat=unix
-    set textwidth=79
+    setlocal fileformat=unix
+    setlocal textwidth=79
 
 let python_highlight_all=1
 

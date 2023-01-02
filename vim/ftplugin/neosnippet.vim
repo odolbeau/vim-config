@@ -1,8 +1,8 @@
 " Indentation
-    set autoindent
-    set noexpandtab
-    set tabstop=4
-    set shiftwidth=4
+    setlocal autoindent
+    setlocal noexpandtab
+    setlocal tabstop=4
+    setlocal shiftwidth=4
 
 " Editor
-    set nolist
+    setlocal nolist
