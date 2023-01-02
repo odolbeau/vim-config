@@ -20,7 +20,6 @@
     Bundle 'lumiliet/vim-twig'
     Plugin 'tpope/vim-surround'
     Plugin 'geoffharcourt/vim-matchit'
-    Plugin 'tpope/vim-markdown'
     Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'tpope/vim-abolish.git'
     Plugin 'pangloss/vim-javascript'
