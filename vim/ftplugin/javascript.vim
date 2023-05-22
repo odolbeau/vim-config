@@ -6,3 +6,6 @@
 " Editor
     setlocal list
     setlocal listchars=trail:¤,tab:>-,nbsp:•     " Show blank spaces and tabs at the end of a line
+
+" Syntastic
+    let g:syntastic_javascript_checkers = ['eslint']
