@@ -69,6 +69,18 @@ snippet usereq "Use Symfony request statement" b
 use Symfony\Component\HttpFoundation\Request;${0}
 endsnippet
 
+snippet usevfe "Use Symfony ValidationFailedException" b
+use Symfony\Component\Validator\Exception\ValidationFailedException;${0}
+endsnippet
+
+snippet usenfe "Use Symfony NotFoundHttpException" b
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+endsnippet
+
+snippet useenfe "Use Doctrine EntityNotFoundException" b
+use Doctrine\ORM\EntityNotFoundException;${0}
+endsnippet
+
 snippet m "Create a new method" b
 ${1:public} function ${2}(${3}): ${4}
 {
