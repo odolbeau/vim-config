@@ -20,9 +20,11 @@ public function get${1/\w+\s*/\u$0/}(): $2
 endsnippet
 
 snippet set "PHP Class Setter" b
-public function set${1/\w+\s*/\u$0/}(${2} $$1): void
+public function set${1/\w+\s*/\u$0/}(${2} $$1): self
 {
     $this->$1 = $$1;
+
+    return $this;
 }
 endsnippet
 
