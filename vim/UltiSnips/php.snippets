@@ -1,5 +1,5 @@
 snippet gs "PHP Class Getter / Setter" b
-public function get${1/\w+\s*/\u$0/}(): $2
+public function get${1/\w+\s*/\u$0/}(): ${2:string}
 {
     return $this->$1;
 }
@@ -13,18 +13,32 @@ public function set${1/\w+\s*/\u$0/}(${2} $$1): self
 endsnippet
 
 snippet get "PHP Class Getter" b
-public function get${1/\w+\s*/\u$0/}(): $2
+public function get${1/\w+\s*/\u$0/}(): ${2:string}
 {
     return $this->$1;
 }
 endsnippet
 
 snippet set "PHP Class Setter" b
-public function set${1/\w+\s*/\u$0/}(${2} $$1): self
+public function set${1/\w+\s*/\u$0/}(${2:string} $$1): self
 {
     $this->$1 = $$1;
 
     return $this;
+}
+endsnippet
+
+snippet has "PHP Class Has* method" b
+public function has${1/\w+\s*/\u$0/}(): bool
+{
+    return $this->$1;
+}
+endsnippet
+
+snippet is "PHP Class Is* method" b
+public function is${1/\w+\s*/\u$0/}(): bool
+{
+    return $this->$1;
 }
 endsnippet
 
@@ -58,11 +72,12 @@ public function __construct(
 ${0}
 endsnippet
 
-snippet inherit "Inherit doc block" b
-/**
- * {@inheritdoc}
- */
-${0}
+snippet inherit "Inheritdoc replaced by override annotation" b
+#[\Override]${0}
+endsnippet
+
+snippet override "Override annotation" b
+#[\Override]${0}
 endsnippet
 
 snippet uselog "use LoggerInterface statement" b
