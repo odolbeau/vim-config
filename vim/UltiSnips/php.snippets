@@ -1,10 +1,10 @@
 snippet gs "PHP Class Getter / Setter" b
-public function get${1/\w+\s*/\u$0/}(): ${2:string}
+public function get${1/\w+\s*/\u$0/}(): $2
 {
     return $this->$1;
 }
 
-public function set${1/\w+\s*/\u$0/}(${2} $$1): self
+public function set${1/\w+\s*/\u$0/}(${2:string} $$1): self
 {
     $this->$1 = $$1;
 
@@ -78,6 +78,14 @@ endsnippet
 
 snippet override "Override annotation" b
 #[\Override]${0}
+endsnippet
+
+snippet usebus "use MessageBusInterface" b
+use Symfony\Component\Messenger\MessageBusInterface;${0}
+endsnippet
+
+snippet useame "use annotation MapEntity" b
+use Symfony\Bridge\Doctrine\Attribute\MapEntity;${0}
 endsnippet
 
 snippet uselog "use LoggerInterface statement" b
