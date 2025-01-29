@@ -96,8 +96,13 @@ snippet useem "use Doctrine EM statement" b
 use Doctrine\ORM\EntityManagerInterface;${0}
 endsnippet
 
-snippet usereq "Use Symfony request statement" b
-use Symfony\Component\HttpFoundation\Request;${0}
+snippet useval "Use ValidatorInterface" b
+use Symfony\Component\Validator\Validator\ValidatorInterface;${0}
+endsnippet
+
+snippet usereq "Use Symfony request & response statement" b
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;${0}
 endsnippet
 
 snippet usevfe "Use Symfony ValidationFailedException" b
@@ -128,6 +133,10 @@ snippet usepdp "Use PHPUnit DataProvider" b
 use PHPUnit\Framework\Attributes\DataProvider;${0}
 endsnippet
 
+snippet usepmock "Use PHPUnit Mock" b
+use PHPUnit\Framework\MockObject\MockObject;${0}
+endsnippet
+
 snippet m "Create a new method" b
 ${1:public} function ${2}(${3}): ${4}
 {
@@ -143,6 +152,10 @@ endsnippet
 
 snippet dst "declare strict types" b
 declare(strict_types=1);${0}
+endsnippet
+
+snippet phpstani "Phpstan ignore" b
+/* @phpstan-ignore ${0}*/
 endsnippet
 
 snippet phpstaninl "Phpstan ignore next line" b
