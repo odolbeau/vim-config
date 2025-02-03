@@ -105,6 +105,12 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;${0}
 endsnippet
 
+snippet useserial "Use Symfony serializer & co" b
+use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
+use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
+use Symfony\Component\Serializer\SerializerInterface;${0}
+endsnippet
+
 snippet usevfe "Use Symfony ValidationFailedException" b
 use Symfony\Component\Validator\Exception\ValidationFailedException;${0}
 endsnippet
@@ -129,11 +135,9 @@ snippet usetrans "Use TranslatorInterface" b
 use Symfony\Contracts\Translation\TranslatorInterface;${0}
 endsnippet
 
-snippet usepdp "Use PHPUnit DataProvider" b
-use PHPUnit\Framework\Attributes\DataProvider;${0}
-endsnippet
-
-snippet usepmock "Use PHPUnit Mock" b
+snippet usetest "Use PHPUnit useful classes" b
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\MockObject\MockObject;${0}
 endsnippet
 
