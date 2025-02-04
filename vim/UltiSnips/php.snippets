@@ -135,10 +135,14 @@ snippet usetrans "Use TranslatorInterface" b
 use Symfony\Contracts\Translation\TranslatorInterface;${0}
 endsnippet
 
-snippet usetest "Use PHPUnit useful classes" b
+snippet usetest "Use a bunch of useful test related classes" b
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
-use PHPUnit\Framework\MockObject\MockObject;${0}
+use PHPUnit\Framework\MockObject\MockObject;
+use Symfony\Bundle\FrameworkBundle\Console\Application;
+use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
+use Symfony\Component\Console\Tester\CommandTester;${0}
 endsnippet
 
 snippet m "Create a new method" b
