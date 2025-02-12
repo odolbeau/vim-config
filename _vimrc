@@ -152,6 +152,9 @@
     endfunction
     nmap <silent> <F10> :call CleanCode()<CR>
 
+    " Folding
+    nnoremap <space> za
+
 " Undo
     set undodir=~/.vim/cache/backups
     set undofile
