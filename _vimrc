@@ -23,6 +23,7 @@
     Plugin 'ctrlpvim/ctrlp.vim'
     Plugin 'tpope/vim-abolish.git'
     Plugin 'pangloss/vim-javascript'
+    Plugin 'hashivim/vim-terraform'
 
     " Color schemes
     Plugin 'altercation/vim-colors-solarized'
