@@ -136,6 +136,15 @@ snippet usetrans "Use TranslatorInterface" b
 use Symfony\Contracts\Translation\TranslatorInterface;${0}
 endsnippet
 
+snippet usecont "Use a bunch of useful controller related classes" b
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpKernel\Attribute\AsController;
+use Symfony\Component\HttpKernel\Attribute\MapQueryParameter;
+use Symfony\Component\HttpKernel\Attribute\MapQueryString;
+use Symfony\Component\HttpKernel\Attribute\MapRequestPayload;
+use Symfony\Component\Security\Http\Attribute\IsGranted;${0}
+endsnippet
+
 snippet usetest "Use a bunch of useful test related classes" b
 use PHPUnit\Framework\TestCase;
 use PHPUnit\Framework\Attributes\DataProvider;
