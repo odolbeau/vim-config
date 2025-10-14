@@ -1,3 +1,18 @@
+snippet nomuse "Nomador common use statements" b
+use App\Application\Command\CommandBus;
+use App\Application\Query\QueryBus;
+use IAM\Domain\User\GetUser\GetUserQuery;
+use IAM\Domain\User\User;
+use IAM\Domain\User\UserId;
+use Subscription\Domain\Customer\CustomerId;
+use Subscription\Domain\Subscription\GetSubscription\GetSubscriptionQuery;
+endsnippet
+
+snippet nom_getuser "Nomador Retrieve a user" b
+/** @var ?User $user */
+$user = $this->queryBus->handleQuery(new GetUserQuery(new UserId(${1:$userId}), returnDTO: false));
+endsnippet
+
 snippet gs "PHP Class Getter / Setter" b
 public function get${1/\w+\s*/\u$0/}(): $2
 {
@@ -138,15 +153,20 @@ endsnippet
 
 snippet usecont "Use a bunch of useful controller related classes" b
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\DependencyInjection\Attribute\Autowire;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Attribute\AsController;
 use Symfony\Component\HttpKernel\Attribute\MapQueryParameter;
 use Symfony\Component\HttpKernel\Attribute\MapQueryString;
 use Symfony\Component\HttpKernel\Attribute\MapRequestPayload;
+use Symfony\Component\Routing\Attribute\Route;
 use Symfony\Component\Security\Http\Attribute\IsGranted;${0}
 endsnippet
 
 snippet usetest "Use a bunch of useful test related classes" b
 use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\CoversClass;
 use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Bundle\FrameworkBundle\Console\Application;
