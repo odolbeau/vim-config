@@ -169,7 +169,7 @@
 
 " NERDTree
     let NERDTreeWinPos = "right"
-    let NERDTreeWinSize = 45
+    let NERDTreeWinSize = 55
     let NERDTreeCascadeSingleChildDir = 0
     let NERDTreeAutoDeleteBuffer=1
     nnoremap <F2> :NERDTreeToggle<CR>
