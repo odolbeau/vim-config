@@ -161,6 +161,7 @@ use Symfony\Component\HttpKernel\Attribute\MapQueryParameter;
 use Symfony\Component\HttpKernel\Attribute\MapQueryString;
 use Symfony\Component\HttpKernel\Attribute\MapRequestPayload;
 use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\Security\Http\Attribute\IsCsrfTokenValid;
 use Symfony\Component\Security\Http\Attribute\IsGranted;${0}
 endsnippet
 
@@ -198,4 +199,10 @@ endsnippet
 
 snippet phpstaninl "Phpstan ignore next line" b
 /* @phpstan-ignore-next-line */${0}
+endsnippet
+
+snippet array_map "PHP array_map function" b
+array_map(static function (${1:string} $${2:value}): ${3:$1} {
+	return ${5}
+}, ${4});
 endsnippet
